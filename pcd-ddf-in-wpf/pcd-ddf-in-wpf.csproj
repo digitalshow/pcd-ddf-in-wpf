@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{C263D939-FEC1-4FCA-9DBF-6C0093157D83}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Koinzer.pcdddfinwpf</RootNamespace>
+    <AssemblyName>Koinzer.pcd-ddf-in-wpf</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <ApplicationIcon>..\icon\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>True</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.xaml.cs">
+      <DependentUpon>AboutBox.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChannelEditor.xaml.cs">
+      <DependentUpon>ChannelEditor.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChannelList.xaml.cs">
+      <DependentUpon>ChannelList.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeRessource.Designer.cs">
+      <DependentUpon>CodeRessource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Commands\AutoCanExecuteCommandWrapper.cs" />
+    <Compile Include="Commands\PCDDeviceChannelCommands.cs" />
+    <Compile Include="Commands\PCDDeviceCommands.cs" />
+    <Compile Include="Commands\PCDGUICommands.cs" />
+    <Compile Include="Controls\ColorPicker.xaml.cs">
+      <DependentUpon>ColorPicker.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\IntegerUpDown.xaml.cs">
+      <DependentUpon>IntegerUpDown.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DeviceAmberEditor.xaml.cs">
+      <DependentUpon>DeviceAmberEditor.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DeviceEditor.xaml.cs">
+      <DependentUpon>DeviceEditor.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GUIEditor.xaml.cs">
+      <DependentUpon>GUIEditor.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GUIPropertyEditor.xaml.cs">
+      <DependentUpon>GUIPropertyEditor.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\GUI\PCDColorPicker.cs" />
+    <Compile Include="Model\GUI\PCDDeviceAddress.cs" />
+    <Compile Include="Model\GUI\PCDDeviceControl.cs" />
+    <Compile Include="Model\GUI\PCDDeviceDipSwitch.cs" />
+    <Compile Include="Model\GUI\PCDDeviceElement.cs" />
+    <Compile Include="Model\GUI\PCDDeviceImage.cs" />
+    <Compile Include="Model\GUI\PCDDeviceName.cs" />
+    <Compile Include="Model\GUI\PCDDropdown.cs" />
+    <Compile Include="Model\GUI\PCDLabel.cs" />
+    <Compile Include="Model\GUI\PCDPosition.cs" />
+    <Compile Include="Model\GUI\PCDSlider.cs" />
+    <Compile Include="Model\PCDChannelItem.cs" />
+    <Compile Include="Model\PCDChannelRange.cs" />
+    <Compile Include="Model\PCDChannelSubset.cs" />
+    <Compile Include="Model\PCDChannelTypes.cs" />
+    <Compile Include="Model\PCDDevice.cs" />
+    <Compile Include="Model\PCDDeviceAmber.cs" />
+    <Compile Include="Model\PCDDeviceChannel.cs" />
+    <Compile Include="Model\PCDDeviceFeature.cs" />
+    <Compile Include="Model\PCDDeviceFeatureRange.cs" />
+    <Compile Include="Model\PCDDeviceFeatures.cs" />
+    <Compile Include="Model\PCDModelObject.cs" />
+    <Compile Include="Parser\ParseResults.cs" />
+    <Compile Include="Parser\PCDColorParser.cs" />
+    <Compile Include="Parser\PCDDeviceAmberParser.cs" />
+    <Compile Include="Parser\PCDDeviceParser.cs" />
+    <Compile Include="Parser\PCDFeatureParser.cs" />
+    <Compile Include="Parser\PCDGoboParser.cs" />
+    <Compile Include="Parser\PCDGUIParser.cs" />
+    <Compile Include="Parser\PCDParser.cs" />
+    <Compile Include="PCDInstallationFinder.cs" />
+    <Compile Include="PrismMvvm\BindableBase.cs" />
+    <Compile Include="PrismMvvm\DelegateCommand.cs" />
+    <Compile Include="PrismMvvm\DelegateCommandBase.cs" />
+    <Compile Include="PrismMvvm\IActiveAware.cs" />
+    <Compile Include="PrismMvvm\PropertySupport.cs" />
+    <Compile Include="PrismMvvm\Resources.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\WPFAssemblyInfo.cs" />
+    <Compile Include="PropertyEditor.xaml.cs">
+      <DependentUpon>PropertyEditor.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelativeFileTextBox.xaml.cs">
+      <DependentUpon>RelativeFileTextBox.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TextRessource.Designer.cs">
+      <DependentUpon>TextRessource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Workspace.cs" />
+    <Compile Include="Writer\PCDCodeWriter.cs" />
+    <Compile Include="Writer\PCDColorsWriter.cs" />
+    <Compile Include="Writer\PCDDeviceWriter.cs" />
+    <Compile Include="Writer\PCDFeatureWriter.cs" />
+    <Compile Include="Writer\PCDGobosWriter.cs" />
+    <Compile Include="Writer\PCDGUIWriter.cs" />
+    <Compile Include="Writer\WriteResults.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AboutBox.xaml" />
+    <Page Include="ChannelEditor.xaml" />
+    <Page Include="ChannelList.xaml" />
+    <Page Include="Controls\ColorPicker.xaml" />
+    <Page Include="Controls\IntegerUpDown.xaml" />
+    <Page Include="DeviceAmberEditor.xaml" />
+    <Page Include="DeviceEditor.xaml" />
+    <Page Include="GUIEditor.xaml" />
+    <Page Include="GUIPropertyEditor.xaml" />
+    <Page Include="PropertyEditor.xaml" />
+    <Page Include="RelativeFileTextBox.xaml" />
+    <Page Include="MainWindow.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Resource Include="Icons\icon-64.png" />
+    <Resource Include="Icons\arrow-move.png" />
+    <Resource Include="Icons\ui-color-picker.png" />
+    <Resource Include="Icons\ui-combo-box.png" />
+    <Resource Include="Icons\ui-label.png" />
+    <Resource Include="Icons\ui-slider.png" />
+    <Resource Include="Icons\cross.png" />
+    <Resource Include="Icons\disk.png" />
+    <Resource Include="Icons\document.png" />
+    <Resource Include="Icons\folder-horizontal-open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model" />
+    <Folder Include="Commands" />
+    <Folder Include="Model\GUI" />
+    <Folder Include="Icons" />
+    <Folder Include="Controls" />
+    <Folder Include="PrismMvvm" />
+    <Folder Include="Writer" />
+    <Folder Include="Parser" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CodeRessource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CodeRessource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrismMvvm\Resources.resx" />
+    <EmbeddedResource Include="TextRessource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TextRessource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
