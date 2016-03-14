@@ -7,7 +7,7 @@ This software provides an editor for those files. It is written using C#, XAML a
 
 Installing
 --
-You can use the provided installer for Windows or build the software yourself. You will need the .NET Framework 4.5.
+There is no installer. Just download and extract the `pcd-ddf-in-wpf.zip` file and execute the .exe. Or build yourself. You will need the .NET Framework 4.5.
 
 Building
 --
