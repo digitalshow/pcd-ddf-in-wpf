@@ -5,6 +5,10 @@ PC_DIMMER is an open source light controlling software. More details: <https://w
 DDF files are used to describe DMX devices for PC_DIMMER. 
 This software provides an editor for those files. It is written using C#, XAML and the .NET Framework 4.5. 
 
+Downloads
+--
+Releases are found at [Releases](https://github.com/digitalshow/pcd-ddf-in-wpf/releases)
+
 Installing
 --
 There is no installer. Just download and extract the `pcd-ddf-in-wpf.zip` file and execute the .exe. Or build yourself. You will need the .NET Framework 4.5.
