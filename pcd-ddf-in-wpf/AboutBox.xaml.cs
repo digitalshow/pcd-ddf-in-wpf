@@ -38,6 +38,19 @@ namespace Koinzer.pcdddfinwpf
 		public AboutBox()
 		{
 			InitializeComponent();
+			// This is against bots searching through github.
+			authorInfo.Text += " <" + TextRessource.mail_user + "@" + TextRessource.mail_domain + ".net>";
+		}
+		
+		void DoRequestNavigate(Object sender, RoutedEventArgs e)
+		{
+			Hyperlink hyperlink = sender as Hyperlink;
+			if (hyperlink == null)
+				return;
+			Uri uri = hyperlink.NavigateUri;
+			if (uri != null) {
+				System.Diagnostics.Process.Start(uri.ToString());
+			}
 		}
 		
 		public static String GPLv3 {

@@ -1,4 +1,4 @@
-﻿<!-- 
+<!-- 
 pcd-ddf-in-wpf: A DDF editor for PC_DIMMER, an open source light 
 control software.
 Copyright (C) 2016 Ingo Koinzer
@@ -32,7 +32,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		</Grid.RowDefinitions>
 		<Image Grid.RowSpan="2" Source="Icons/icon-64.png" Width="64" Height="64" Margin="0,0,4,4" />
 		<TextBlock Grid.Row="0" Grid.Column="1" FontWeight="Bold" FontSize="16" Text="PCD DDF in WPF - PC_DIMMER DDF Editor" />
-		<TextBlock Grid.Row="1" Grid.Column="1" Text="Copyright (C) 2016 Ingo Koinzer" />
-		<TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static self:AboutBox.GPLv3}" VerticalScrollBarVisibility="Visible" />
+		<TextBlock Grid.Row="1" Grid.Column="1" Text="Copyright (C) 2016 Ingo Koinzer" Name="authorInfo" />
+		<TabControl  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+			<TabItem Header="Libraries">
+				<StackPanel>
+					<TextBlock xml:space="preserve"><Bold>Prism MVVM by .NET Foundation</Bold> <Hyperlink NavigateUri="https://github.com/PrismLibrary/Prism" RequestNavigate="DoRequestNavigate">https://github.com/PrismLibrary/Prism</Hyperlink></TextBlock>
+					<TextBlock xml:space="preserve">Licensed under Apache License 2.0 <Hyperlink NavigateUri="http://www.apache.org/licenses/LICENSE-2.0" RequestNavigate="DoRequestNavigate">http://www.apache.org/licenses/LICENSE-2.0</Hyperlink></TextBlock>
+					<TextBlock xml:space="preserve" Margin="0,5,0,0"><Bold>Fugue Icons</Bold></TextBlock>
+					<TextBlock xml:space="preserve">Copyright (C) 2010 Yusuke Kamiyamane. All rights reserved. <Hyperlink NavigateUri="http://p.yusukekamiyamane.com/" RequestNavigate="DoRequestNavigate">http://p.yusukekamiyamane.com/</Hyperlink></TextBlock>
+					<TextBlock xml:space="preserve">The icons are licensed under a Creative Commons Attribution 3.0 license. <Hyperlink NavigateUri="http://creativecommons.org/licenses/by/3.0/" RequestNavigate="DoRequestNavigate">http://creativecommons.org/licenses/by/3.0/</Hyperlink></TextBlock>
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="License">
+				<TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static self:AboutBox.GPLv3}" VerticalScrollBarVisibility="Visible" />
+			</TabItem>
+		</TabControl>
 	</Grid>
 </UserControl>

@@ -101,5 +101,23 @@ namespace Koinzer.pcdddfinwpf {
 				return ResourceManager.GetString("gplv3_2", resourceCulture);
 			}
 		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to koinzer.
+		/// </summary>
+		internal static string mail_domain {
+			get {
+				return ResourceManager.GetString("mail_domain", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to ingo.
+		/// </summary>
+		internal static string mail_user {
+			get {
+				return ResourceManager.GetString("mail_user", resourceCulture);
+			}
+		}
 	}
 }
