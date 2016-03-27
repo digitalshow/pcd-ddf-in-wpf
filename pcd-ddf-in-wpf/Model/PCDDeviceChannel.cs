@@ -39,6 +39,13 @@ namespace Koinzer.pcdddfinwpf.Model
 			Parent = parent;
 		}
 		
+		protected override System.Collections.IList GetContainingCollection()
+		{
+			if (Parent == null)
+				return null;
+			return Parent.Channels;
+		}
+		
 		public void SortSubsets() 
 		{
 			for (int i = 0; i < Subsets.Count; i++) {

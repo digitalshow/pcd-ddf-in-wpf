@@ -48,12 +48,14 @@ namespace Koinzer.pcdddfinwpf.Controls
 		
 		void Button_Click(object sender, RoutedEventArgs e)
 		{
-			Value += 1;
+			int delta = (Keyboard.Modifiers.HasFlag(ModifierKeys.Shift)) ? 10 : 1;
+			Value += delta;
 		}
 		
 		void Button_Click1(object sender, RoutedEventArgs e)
 		{
-			Value -= 1;
+			int delta = (Keyboard.Modifiers.HasFlag(ModifierKeys.Shift)) ? 10 : 1;
+			Value -= delta;
 		}
 		
 		void UpdateButtonIsEnabled()
@@ -80,6 +82,19 @@ namespace Koinzer.pcdddfinwpf.Controls
 			if (sender == null)
 				return;
 			obj.UpdateButtonIsEnabled();
+		}
+		
+		void Textbox_PreviewKeyDown(object sender, KeyEventArgs e)
+		{
+			int delta = e.KeyboardDevice.Modifiers.HasFlag(ModifierKeys.Shift) ? 10 : 1;
+			if (e.Key == Key.Down) {
+				Value -= delta;
+				e.Handled = true;
+			}
+			if (e.Key == Key.Up) {
+				Value += delta;
+				e.Handled = true;
+			}
 		}
 		
 		public static readonly DependencyProperty ValueProperty =

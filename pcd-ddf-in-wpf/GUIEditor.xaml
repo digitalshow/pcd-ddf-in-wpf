@@ -27,6 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		<cmd:PCDDeviceCommands x:Key="devCmd" />
 		<cmd:PCDGUICommands x:Key="guiCmd" />
 		<cmd:PCDDeviceChannelCommands x:Key="devChCmd" />
+		<cmd:PCDModelObjectCommands x:Key="objCmd" />
 	</UserControl.Resources>
 	<DockPanel>
 		<ToolBarPanel DockPanel.Dock="Top">
@@ -61,14 +62,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 						<TextBlock Text="Add Label" />
 					</StackPanel>
 				</Button>
+				<Button Command="{Binding AddButton, Source={StaticResource guiCmd}}" CommandParameter="{Binding}">
+					<StackPanel Orientation="Horizontal">
+						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/ui-button.png" />
+						<TextBlock Text="Add Button" />
+					</StackPanel>
+				</Button>
 				<Separator />
-				<Button Command="{Binding Remove, Source={StaticResource guiCmd}}" CommandParameter="{Binding SelectedItem, ElementName=list}">
+				<Button Command="{Binding Remove, Source={StaticResource objCmd}}" CommandParameter="{Binding SelectedItem, ElementName=list}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/cross.png" />
 						<TextBlock Text="Remove" />
 					</StackPanel>
 				</Button>
 				<Separator />
+				<Button Content="Add Preset Selector" Command="{Binding AddPresetSelector, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
+				<Button Content="Add Fadetime Edit" Command="{Binding AddFadetimeEdit, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
+				<Button Content="Add Fadetime Checkbox" Command="{Binding AddFadetimeCheckbox, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
 				<Button Content="Add Device Address" Command="{Binding AddDeviceAddress, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
 				<Button Content="Add Device Dipswitch" Command="{Binding AddDeviceDipswitch, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
 				<Button Content="Add Device Image" Command="{Binding AddDeviceImage, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
@@ -94,7 +104,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			    TextOptions.TextFormattingMode="Display"
 			    TextOptions.TextRenderingMode="Aliased"
 				Width="{Binding FormWidth}" 
-				Height="{Binding FormHeight}">
+				Height="{Binding FormHeight}"
+			    Name="itemsControl"
+				PreviewMouseMove="ItemsControl_PreviewMouseMove">
 				<ItemsControl.ItemsPanel>
 					<ItemsPanelTemplate>
 						<Canvas />
@@ -114,34 +126,58 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 							TextAlignment="Center"
 							Text="Device image"
 							TextWrapping="Wrap"
-							Background="AliceBlue" />
+							Background="AliceBlue"
+							PreviewMouseDown="ElementClicked"
+							Tag="{Binding}" />
 					</DataTemplate>
 					<DataTemplate DataType="{x:Type gui:PCDDeviceName}">
 						<TextBlock 
 							Text="Device name"
 							TextWrapping="Wrap"
-							Background="AliceBlue" />
+							Background="AliceBlue"
+							PreviewMouseDown="ElementClicked"
+							Tag="{Binding}" />
 					</DataTemplate>
 					<DataTemplate DataType="{x:Type gui:PCDDeviceAddress}">
 						<TextBlock 
 							Text="Device address"
 							TextWrapping="Wrap"
-							Background="AliceBlue" />
+							Background="AliceBlue"
+							PreviewMouseDown="ElementClicked"
+							Tag="{Binding}" />
 					</DataTemplate>
 					<DataTemplate DataType="{x:Type gui:PCDDeviceDipSwitch}">
 						<TextBlock 
-							Width="80"
-							Height="30"
+							Width="{Binding Width}"
+							Height="{Binding Height}"
 							Text="Dipswitch"
 							TextWrapping="Wrap"
 							TextAlignment="Center"
-							Background="PaleVioletRed" />
+							Background="PaleVioletRed"
+							PreviewMouseDown="ElementClicked"
+							Tag="{Binding}" />
 					</DataTemplate>
 					<DataTemplate DataType="{x:Type gui:PCDDropdown}">
 						<ComboBox 
 							Width="{Binding Width}"
 							Height="{Binding Height}"
-							ItemsSource="{Binding AssociatedChannel.Subsets}">
+							ItemsSource="{Binding AssociatedChannel.Subsets}"
+							PreviewMouseDown="ElementClicked"
+							Tag="{Binding}">
+							<ComboBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Name}" />
+								</DataTemplate>
+							</ComboBox.ItemTemplate>
+						</ComboBox>
+					</DataTemplate>
+					<DataTemplate DataType="{x:Type gui:PCDPresetSelector}">
+						<ComboBox 
+							Width="{Binding Width}"
+							Height="{Binding Height}"
+							ItemsSource="{Binding Parent.Presets}"
+							PreviewMouseDown="ElementClicked"
+							Tag="{Binding}">
 							<ComboBox.ItemTemplate>
 								<DataTemplate>
 									<TextBlock Text="{Binding Name}" />
@@ -152,13 +188,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 					<DataTemplate DataType="{x:Type gui:PCDLabel}">
 						<TextBlock Text="{Binding Caption}"
 							Width="{Binding Width}"
-							Height="{Binding Height}" />
+							Height="{Binding Height}"
+							PreviewMouseDown="ElementClicked"
+							Tag="{Binding}" />
 					</DataTemplate>
 					<DataTemplate DataType="{x:Type gui:PCDPosition}">
 						<Grid
 							Width="{Binding Width}"
 							Height="{Binding Height}"
-							Background="Orange">
+							Background="Orange"
+							PreviewMouseDown="ElementClicked"
+							Tag="{Binding}">
 							<TextBlock Text="{Binding Name}"
 								VerticalAlignment="Top"
 								HorizontalAlignment="Center"/>
@@ -174,12 +214,52 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 						<TextBlock Text="{Binding Name}"
 							Width="{Binding Width}"
 							Height="{Binding Height}"
-							Background="Yellow" />
+							Background="Yellow"
+							PreviewMouseDown="ElementClicked"
+							Tag="{Binding}" />
 					</DataTemplate>
 					<DataTemplate DataType="{x:Type gui:PCDSlider}">
 						<Slider Minimum="0" Maximum="255"
 							Width="{Binding Width}"
-							Height="{Binding Height}" />
+							Height="{Binding Height}"
+							PreviewMouseDown="ElementClicked"
+							Tag="{Binding}" />
+					</DataTemplate>
+					<DataTemplate DataType="{x:Type gui:PCDButton}">
+						<Button
+							Width="{Binding Width}"
+							Height="{Binding Height}"
+							PreviewMouseDown="ElementClicked"
+							Tag="{Binding}">
+							<Button.Style>
+								<Style TargetType="Button">
+									<Setter Property="Content" Value="{Binding AssociatedPreset.Name}" />
+									<Style.Triggers>
+										<DataTrigger Binding="{Binding SpecialButtonAction}" Value="ChangeColorPicker">
+											<Setter Property="Content" Value="{Binding Caption}" />
+										</DataTrigger>
+									</Style.Triggers>
+								</Style>
+							</Button.Style>
+						</Button>
+					</DataTemplate>
+					<DataTemplate DataType="{x:Type gui:PCDFadetimeEdit}">
+						<TextBox
+							Width="{Binding Width}"
+							Height="{Binding Height}"
+							PreviewMouseDown="ElementClicked"
+							Text="{Binding Value}"
+							IsReadOnly="True"
+							Tag="{Binding}" />
+					</DataTemplate>
+					<DataTemplate DataType="{x:Type gui:PCDFadetimeCheckbox}">
+						<CheckBox
+							Content="{Binding Caption}"
+							Width="{Binding Width}"
+							Height="{Binding Height}"
+							IsChecked="{Binding Checked, Mode=OneWay}"
+							PreviewMouseDown="ElementClicked"
+							Tag="{Binding}" />
 					</DataTemplate>
 				</ItemsControl.Resources>
 			</ItemsControl>

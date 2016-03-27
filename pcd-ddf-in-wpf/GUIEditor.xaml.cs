@@ -39,5 +39,36 @@ namespace Koinzer.pcdddfinwpf
 		{
 			InitializeComponent();
 		}
+		
+		Point offset;
+		Point startPoint;
+		bool moving = false;
+		
+		public void ElementClicked(Object sender, MouseButtonEventArgs e)
+		{
+			if (sender as FrameworkElement != null && ((FrameworkElement)sender).Tag as Model.GUI.PCDDeviceElement != null) {
+				list.SelectedItem = ((FrameworkElement)sender).Tag;
+				offset = e.GetPosition(sender as IInputElement);
+				startPoint = e.GetPosition(itemsControl);
+				moving = true;
+			}
+		}
+		
+		void ItemsControl_PreviewMouseMove(object sender, MouseEventArgs e)
+		{
+			if (e.LeftButton == MouseButtonState.Pressed && moving) {
+				Point point = e.GetPosition(sender as IInputElement);
+				if ((point - startPoint).X < 5 && (point - startPoint).Y < 5)
+					return;
+				startPoint = new Point(-1000000, -1000000);
+				Model.GUI.PCDDeviceElement element = list.SelectedItem as Model.GUI.PCDDeviceElement;
+				if (element != null) {
+					element.Left = ((int)(point.X - offset.X) / 5) * 5;
+					element.Top = ((int)(point.Y - offset.Y) / 5) * 5;
+				}
+			} else {
+				moving = false;
+			}
+		}
 	}
 }

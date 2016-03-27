@@ -93,6 +93,10 @@ namespace Koinzer.pcdddfinwpf.Writer
 			new PCDGobosWriter().Write(nodeDevice, device, results);
 			new PCDFeatureWriter().Write(nodeDevice, device, results);
 			
+			XElement presets = new XElement("presets");
+			new PCDPresetWriter().Write(presets, device, results);
+			nodeDevice.Add(presets);
+			
 			XElement form = new XElement("form",
 			                             new XAttribute("width", device.FormWidth),
 			                             new XAttribute("height", device.FormHeight));

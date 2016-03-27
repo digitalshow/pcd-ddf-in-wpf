@@ -47,6 +47,7 @@ namespace Koinzer.pcdddfinwpf.Parser
 			new PCDColorParser().Parse(doc, device, results);
 			new PCDGoboParser().Parse(doc, device, results);
 			new PCDFeatureParser().Parse(doc, device, results);
+			new PCDPresetParser().Parse(doc, device, results);
 			new PCDGUIParser().Parse(doc, device, results);
 			Results = results;
 			return device;

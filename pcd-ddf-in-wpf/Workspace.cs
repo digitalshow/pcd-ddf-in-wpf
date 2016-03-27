@@ -38,7 +38,9 @@ namespace Koinzer.pcdddfinwpf
 			SaveToFile = new DelegateCommand(DoSaveToFile);
 			CurrentFileName = "";
 			if (PCDInstallationFinder.Instance.InstallationDirectory == null)
-				MessageBox.Show("PC_DIMMER installation could not be found.", "PC_DIMMER not found", MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show("PC_DIMMER installation could not be found.", "PC_DIMMER not found", MessageBoxButton.OK, MessageBoxImage.Warning);
+			ChangesTracker = new ChangesTracker();
+			CurrentDevice = new Koinzer.pcdddfinwpf.Model.PCDDevice();
 		}
 		
 		#region Singleton
@@ -61,7 +63,8 @@ namespace Koinzer.pcdddfinwpf
 		
 		public void DoNew()
 		{
-			CurrentDevice = new Koinzer.pcdddfinwpf.Model.PCDDevice();
+			if (CanClose())
+				CurrentDevice = new Koinzer.pcdddfinwpf.Model.PCDDevice();
 		}
 		
 		public ICommand LoadFromFile { get; private set; }
@@ -70,13 +73,20 @@ namespace Koinzer.pcdddfinwpf
 		{
 			Microsoft.Win32.OpenFileDialog ofd = new Microsoft.Win32.OpenFileDialog();
 			ofd.Filter = "PC_DIMMER DDF (*.pcddevc)|*.pcddevc|All files (*.*)|*.*";
-			if (ofd.ShowDialog().GetValueOrDefault() == true)
-				LoadDeviceFromFile(ofd.FileName);
+			if (ofd.ShowDialog().GetValueOrDefault() == true) {
+				if (CanClose())
+					LoadDeviceFromFile(ofd.FileName);
+			}
 		}
 		
 		public ICommand SaveToFile { get; private set; }
 		
 		public void DoSaveToFile()
+		{
+			SaveToFileDialog();
+		}
+		
+		public bool SaveToFileDialog()
 		{
 			Microsoft.Win32.SaveFileDialog sfd = new Microsoft.Win32.SaveFileDialog();
 			sfd.Filter = "PC_DIMMER DDF (*.pcddevc)|*.pcddevc|All files (*.*)|*.*";
@@ -87,8 +97,12 @@ namespace Koinzer.pcdddfinwpf
 			System.IO.FileInfo fi = new System.IO.FileInfo(fileName);
 			sfd.InitialDirectory = fi.DirectoryName;
 			sfd.FileName = CurrentDevice.CodeFriendlyName();
-			if (sfd.ShowDialog().GetValueOrDefault() == true)
+			if (sfd.ShowDialog().GetValueOrDefault() == true) {
 				SaveDeviceToFile(sfd.FileName);
+				ChangesTracker.Unchanged();
+				return true;
+			}
+			return false;
 		}
 		
 		#endregion
@@ -121,11 +135,29 @@ namespace Koinzer.pcdddfinwpf
 			}
 		}
 		
+		public bool CanClose()
+		{
+			if (ChangesTracker.Changed) {
+				switch (MessageBox.Show("Do you want to save the file?", "File modified", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel)) {
+					case MessageBoxResult.Cancel:
+						return false;
+					case MessageBoxResult.No:
+						return true;
+					case MessageBoxResult.Yes:
+						return SaveToFileDialog();
+				}
+			}
+			return true;
+		}
+		
 		Model.PCDDevice currentDevice;
 		
 		public Model.PCDDevice CurrentDevice {
 			get { return currentDevice; }
-			set { SetProperty(ref currentDevice, value); }
+			set {
+				SetProperty(ref currentDevice, value);
+				ChangesTracker.Observed = value;
+			}
 		}
 		
 		String currentFileName;
@@ -134,5 +166,7 @@ namespace Koinzer.pcdddfinwpf
 			get { return currentFileName; }
 			set { SetProperty(ref currentFileName, value); }
 		}
+		
+		public ChangesTracker ChangesTracker { get; private set; }
 	}
 }

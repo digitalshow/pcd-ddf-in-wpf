@@ -46,11 +46,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 									<ColumnDefinition Width="0.5*" />
 								</Grid.ColumnDefinitions>
 								<TextBlock Grid.Row="0" Grid.Column="0" Text="Channel" />
-								<TextBox Grid.Row="0" Grid.Column="1" IsReadOnly="True" Text="{Binding Channel}" />
+								<TextBox Grid.Row="0" Grid.Column="1" IsReadOnly="True" Text="{Binding Channel, UpdateSourceTrigger=PropertyChanged}" />
 								<TextBlock Grid.Row="2" Grid.Column="0" Text="Channel type" />
 								<ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding ChannelTypes, Source={StaticResource ct}}" IsEditable="True" Text="{Binding ChannelType}" />
 								<TextBlock Grid.Row="1" Grid.Column="0" Text="Name" />
-								<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Name}" />
+								<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
 								<TextBlock Grid.Row="3" Grid.Column="0" Text="Min" />
 								<ctrls:IntegerUpDown Grid.Row="3" Grid.Column="1" Minimum="0" Maximum="{Binding MaxValue}" Value="{Binding MinValue}" />
 								<TextBlock Grid.Row="4" Grid.Column="0" Text="Max" />
@@ -81,7 +81,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 									<ColumnDefinition Width="0.5*" />
 								</Grid.ColumnDefinitions>
 								<TextBlock Grid.Row="0" Grid.Column="0" Text="Name" />
-								<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name}" />
+								<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
 								<TextBlock Grid.Row="1" Grid.Column="0" Text="Min" />
 								<ctrls:IntegerUpDown Grid.Row="1" Grid.Column="1" Minimum="{Binding Parent.MinValue}" Maximum="{Binding MaxValue}" Value="{Binding MinValue}" />
 								<TextBlock Grid.Row="2" Grid.Column="0" Text="Max" />
@@ -93,7 +93,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 								<TextBlock Grid.Row="5" Grid.Column="0" Text="Color" />
 								<ctrls:ColorPicker Grid.Row="5" Grid.Column="1" SelectedColor="{Binding Color}" />
 								<CheckBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="{Binding JoinNext}" Content="Join with next item" />
-								<ComboBox Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" SelectedItem="{Binding Feature}" Initialized="ItemComboBox_Initialized" />
+								<ctrls:FeatureSelector Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Subset="{Binding}" />
 							</Grid>
 						</GroupBox>
 					</StackPanel>
@@ -123,7 +123,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 								<TextBlock Grid.Row="3" Grid.Column="0" Text="Color" />
 								<ctrls:ColorPicker Grid.Row="3" Grid.Column="1" SelectedColor="{Binding Color}" />
 								<CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="{Binding JoinNext}" Content="Join with next item" />
-								<ComboBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" SelectedItem="{Binding Feature}" Initialized="RangeComboBox_Initialized" />
+								<ctrls:FeatureSelector Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Subset="{Binding}" />
 							</Grid>
 						</GroupBox>
 					</StackPanel>

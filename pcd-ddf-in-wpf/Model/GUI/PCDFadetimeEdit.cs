@@ -23,29 +23,38 @@ using System;
 namespace Koinzer.pcdddfinwpf.Model.GUI
 {
 	/// <summary>
-	/// Description of PCDDeviceImage.
+	/// Description of PCDFadetimeEdit.
 	/// </summary>
-	public class PCDDeviceImage: PCDDeviceElement
+	public class PCDFadetimeEdit: PCDDeviceElement
 	{
-		public PCDDeviceImage(PCDDevice device): base(device)
+		public PCDFadetimeEdit(PCDDevice device): base(device)
 		{
-			Width = Height = 64;
+			Width = 70;
+			Height = 25;
+			Value = 1000;
 		}
 		
 		public override string GetNodeName()
 		{
-			return "deviceimage";
+			return "edit";
+		}
+		
+		protected override bool GetHasSize()
+		{
+			return true;
+		}
+		
+		int _value;
+		
+		public int Value {
+			get { return _value; }
+			set { SetProperty(ref _value, value); }
 		}
 		
 		public String Name {
 			get {
-				return "Device image";
+				return "Fadetime edit";
 			}
-		}
-		
-		public override String ToString()
-		{
-			return "Device image";
 		}
 	}
 }

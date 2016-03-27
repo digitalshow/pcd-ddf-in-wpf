@@ -37,6 +37,13 @@ namespace Koinzer.pcdddfinwpf.Model.GUI
 			Height = 25;
 		}
 		
+		protected override System.Collections.IList GetContainingCollection()
+		{
+			if (Parent == null)
+				return null;
+			return Parent.GUIElements;
+		}
+		
 		public abstract String GetNodeName();
 		
 		protected virtual bool GetHasSize()

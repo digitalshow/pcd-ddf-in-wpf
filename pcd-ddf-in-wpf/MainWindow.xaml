@@ -21,8 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:self="clr-namespace:Koinzer.pcdddfinwpf"
 	xmlns:cmd="clr-namespace:Koinzer.pcdddfinwpf.Commands"
-	Title="PCD DDF in WPF - PC_DIMMER DDF Builder" Height="600" Width="900"
-	FontSize="14"
+	Title="PCD DDF in WPF - PC_DIMMER DDF Builder" Height="600" Width="1000"
+	FontSize="14" MinWidth="600" MinHeight="400"
 	>
 	<Window.Resources>
 		<cmd:PCDDeviceCommands x:Key="devCmd" />
@@ -43,7 +43,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 						<TextBlock Text="Open" />
 					</StackPanel>
 				</Button>
-				<Button Command="{Binding SaveToFile}">
+				<Button Command="{Binding SaveToFile}" IsEnabled="{Binding ChangesTracker.Changed}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/disk.png" />
 						<TextBlock Text="Save" />
@@ -55,11 +55,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			<TabItem Header="Device">
 				<self:DeviceEditor DataContext="{Binding CurrentDevice}" />
 			</TabItem>
+			<TabItem Header="Amber">
+				<self:DeviceAmberEditor DataContext="{Binding CurrentDevice.Amber}" />
+			</TabItem>
 			<TabItem Header="Channels">
 				<self:ChannelEditor DataContext="{Binding CurrentDevice}" />
 			</TabItem>
-			<TabItem Header="Amber">
-				<self:DeviceAmberEditor DataContext="{Binding CurrentDevice.Amber}" />
+			<TabItem Header="Presets">
+				<self:PresetEditor DataContext="{Binding CurrentDevice}" />
 			</TabItem>
 			<TabItem Header="GUI">
 				<self:GUIEditor DataContext="{Binding CurrentDevice}" />

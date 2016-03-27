@@ -19,6 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 using System;
+using System.Collections.Specialized;
+using System.Collections.ObjectModel;
 using System.Windows.Media;
 
 namespace Koinzer.pcdddfinwpf.Model
@@ -35,6 +37,30 @@ namespace Koinzer.pcdddfinwpf.Model
 			MaxValue = 255;
 			JoinNext = false;
 			Color = Colors.Transparent;
+			Features = new ObservableCollection<PCDDeviceFeature>();
+			Features.CollectionChanged += Features_CollectionChanged;
+		}
+
+		void Features_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+		{
+			if (e.Action == NotifyCollectionChangedAction.Add) {
+				foreach (object o in e.NewItems) {
+					PCDDeviceFeature feature = o as PCDDeviceFeature;
+					if (feature == null) continue;
+					if (!(feature is PCDDeviceFeatureRange) && (this is PCDChannelRange)) {
+						throw new ArgumentException("This feature is not a range and can only be applied to items.");
+					}
+					if (Name == "<Not named>")
+						Name = feature.FeatureItemName;
+					}
+			}
+		}
+		
+		protected override System.Collections.IList GetContainingCollection()
+		{
+			if (Parent == null)
+				return null;
+			return Parent.Subsets;
 		}
 		
 		public virtual void InitValueBounds()
@@ -144,18 +170,11 @@ namespace Koinzer.pcdddfinwpf.Model
 			set { SetProperty(ref joinNext, value); }
 		}
 		
-		PCDDeviceFeature feature;
+		ObservableCollection<PCDDeviceFeature> features;
 		
-		public PCDDeviceFeature Feature {
-			get { return feature; }
-			set {
-				if (!(value is PCDDeviceFeatureRange) && (this is PCDChannelRange)) {
-					throw new ArgumentException("This feature is not a range and can only be applied to items.");
-				}
-				if (Name == "<Not named>")
-					Name = value.FeatureItemName;
-				SetProperty(ref feature, value); 
-			}
+		public ObservableCollection<PCDDeviceFeature> Features {
+			get { return features; }
+			set { SetProperty(ref features, value);	}
 		}
 		
 		public PCDDeviceChannel Parent { get; private set; }

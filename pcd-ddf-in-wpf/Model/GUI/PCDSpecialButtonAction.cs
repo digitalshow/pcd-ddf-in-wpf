@@ -23,29 +23,11 @@ using System;
 namespace Koinzer.pcdddfinwpf.Model.GUI
 {
 	/// <summary>
-	/// Description of PCDDeviceImage.
+	/// Special button action.
 	/// </summary>
-	public class PCDDeviceImage: PCDDeviceElement
+	public enum PCDSpecialButtonAction
 	{
-		public PCDDeviceImage(PCDDevice device): base(device)
-		{
-			Width = Height = 64;
-		}
-		
-		public override string GetNodeName()
-		{
-			return "deviceimage";
-		}
-		
-		public String Name {
-			get {
-				return "Device image";
-			}
-		}
-		
-		public override String ToString()
-		{
-			return "Device image";
-		}
+		None = 0,
+		ChangeColorPicker
 	}
 }

@@ -70,6 +70,7 @@
       <SubType>Code</SubType>
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ChangesTracker.cs" />
     <Compile Include="ChannelEditor.xaml.cs">
       <DependentUpon>ChannelEditor.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -85,9 +86,15 @@
     <Compile Include="Commands\AutoCanExecuteCommandWrapper.cs" />
     <Compile Include="Commands\PCDDeviceChannelCommands.cs" />
     <Compile Include="Commands\PCDDeviceCommands.cs" />
+    <Compile Include="Commands\PCDDevicePresetCommands.cs" />
     <Compile Include="Commands\PCDGUICommands.cs" />
+    <Compile Include="Commands\PCDModelObjectCommands.cs" />
     <Compile Include="Controls\ColorPicker.xaml.cs">
       <DependentUpon>ColorPicker.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\FeatureSelector.xaml.cs">
+      <DependentUpon>FeatureSelector.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controls\IntegerUpDown.xaml.cs">
@@ -110,6 +117,8 @@
       <DependentUpon>GUIPropertyEditor.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\CodeHelper.cs" />
+    <Compile Include="Model\GUI\PCDButton.cs" />
     <Compile Include="Model\GUI\PCDColorPicker.cs" />
     <Compile Include="Model\GUI\PCDDeviceAddress.cs" />
     <Compile Include="Model\GUI\PCDDeviceControl.cs" />
@@ -118,9 +127,13 @@
     <Compile Include="Model\GUI\PCDDeviceImage.cs" />
     <Compile Include="Model\GUI\PCDDeviceName.cs" />
     <Compile Include="Model\GUI\PCDDropdown.cs" />
+    <Compile Include="Model\GUI\PCDFadetimeCheckbox.cs" />
+    <Compile Include="Model\GUI\PCDFadetimeEdit.cs" />
     <Compile Include="Model\GUI\PCDLabel.cs" />
     <Compile Include="Model\GUI\PCDPosition.cs" />
+    <Compile Include="Model\GUI\PCDPresetSelector.cs" />
     <Compile Include="Model\GUI\PCDSlider.cs" />
+    <Compile Include="Model\GUI\PCDSpecialButtonAction.cs" />
     <Compile Include="Model\PCDChannelItem.cs" />
     <Compile Include="Model\PCDChannelRange.cs" />
     <Compile Include="Model\PCDChannelSubset.cs" />
@@ -131,6 +144,8 @@
     <Compile Include="Model\PCDDeviceFeature.cs" />
     <Compile Include="Model\PCDDeviceFeatureRange.cs" />
     <Compile Include="Model\PCDDeviceFeatures.cs" />
+    <Compile Include="Model\PCDDevicePreset.cs" />
+    <Compile Include="Model\PCDDevicePresetChannel.cs" />
     <Compile Include="Model\PCDModelObject.cs" />
     <Compile Include="Parser\ParseResults.cs" />
     <Compile Include="Parser\PCDColorParser.cs" />
@@ -140,7 +155,20 @@
     <Compile Include="Parser\PCDGoboParser.cs" />
     <Compile Include="Parser\PCDGUIParser.cs" />
     <Compile Include="Parser\PCDParser.cs" />
+    <Compile Include="Parser\PCDPresetParser.cs" />
     <Compile Include="PCDInstallationFinder.cs" />
+    <Compile Include="PresetEditor.xaml.cs">
+      <DependentUpon>PresetEditor.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PresetList.xaml.cs">
+      <DependentUpon>PresetList.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PresetPropertyEditor.xaml.cs">
+      <DependentUpon>PresetPropertyEditor.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PrismMvvm\BindableBase.cs" />
     <Compile Include="PrismMvvm\DelegateCommand.cs" />
     <Compile Include="PrismMvvm\DelegateCommandBase.cs" />
@@ -172,6 +200,7 @@
     <Compile Include="Writer\PCDFeatureWriter.cs" />
     <Compile Include="Writer\PCDGobosWriter.cs" />
     <Compile Include="Writer\PCDGUIWriter.cs" />
+    <Compile Include="Writer\PCDPresetWriter.cs" />
     <Compile Include="Writer\WriteResults.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -179,17 +208,29 @@
     <Page Include="ChannelEditor.xaml" />
     <Page Include="ChannelList.xaml" />
     <Page Include="Controls\ColorPicker.xaml" />
+    <Page Include="Controls\FeatureSelector.xaml" />
     <Page Include="Controls\IntegerUpDown.xaml" />
     <Page Include="DeviceAmberEditor.xaml" />
     <Page Include="DeviceEditor.xaml" />
     <Page Include="GUIEditor.xaml" />
     <Page Include="GUIPropertyEditor.xaml" />
+    <Page Include="PresetEditor.xaml" />
+    <Page Include="PresetList.xaml" />
+    <Page Include="PresetPropertyEditor.xaml" />
     <Page Include="PropertyEditor.xaml" />
     <Page Include="RelativeFileTextBox.xaml" />
     <Page Include="MainWindow.xaml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <Resource Include="Icons\plus.png" />
+    <Resource Include="Icons\script-block.png" />
+    <Resource Include="Icons\script--plus.png" />
+    <Resource Include="Icons\script.png" />
+    <Resource Include="Icons\scripts.png" />
+    <Resource Include="Icons\arrow-090.png" />
+    <Resource Include="Icons\arrow-270.png" />
+    <Resource Include="Icons\ui-button.png" />
     <Resource Include="Icons\icon-64.png" />
     <Resource Include="Icons\arrow-move.png" />
     <Resource Include="Icons\ui-color-picker.png" />

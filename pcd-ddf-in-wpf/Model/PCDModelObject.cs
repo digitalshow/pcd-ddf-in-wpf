@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 using System;
+using System.Collections;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Prism.Mvvm;
@@ -33,5 +34,12 @@ namespace Koinzer.pcdddfinwpf.Model
 		public PCDModelObject()
 		{
 		}
+		
+		protected virtual IList GetContainingCollection() 
+		{
+			return null;
+		}
+		
+		public IList ContainingCollection { get { return GetContainingCollection(); } }
 	}
 }

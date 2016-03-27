@@ -35,7 +35,6 @@ namespace Koinzer.pcdddfinwpf.Commands
 			AddRange = new AutoCanExecuteCommandWrapper(new DelegateCommand<Model.PCDDeviceChannel>(DoAddRange, c => c != null));
 			InsertItem = new AutoCanExecuteCommandWrapper(new DelegateCommand<Model.PCDModelObject>(DoInsertItem, s => s != null && s is Model.PCDChannelSubset));
 			InsertRange = new AutoCanExecuteCommandWrapper(new DelegateCommand<Model.PCDModelObject>(DoInsertRange, s => s != null && s is Model.PCDChannelSubset));
-			Remove = new AutoCanExecuteCommandWrapper(new DelegateCommand<Model.PCDModelObject>(DoRemove, s => s != null && s is Model.PCDChannelSubset));
 		}
 		
 		public ICommand AddItem { get; private set; }
@@ -89,16 +88,6 @@ namespace Koinzer.pcdddfinwpf.Commands
 			if ((subset is Model.PCDChannelItem) && (((Model.PCDChannelItem)subset).SetValue < subset.MinValue))
 				((Model.PCDChannelItem)subset).SetValue = subset.MinValue;
 			subset.Parent.Subsets.Insert(subset.Parent.Subsets.IndexOf(subset), range);
-		}
-		
-		public ICommand Remove { get; private set; }
-		
-		public void DoRemove(Model.PCDModelObject item)
-		{
-			Model.PCDChannelSubset subset = item as Model.PCDChannelSubset;
-			if (subset == null || subset.Parent == null)
-				return;
-			subset.Parent.Subsets.Remove(subset);
 		}
 	}
 }

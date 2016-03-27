@@ -40,7 +40,10 @@ namespace Koinzer.pcdddfinwpf.Commands
 			AddLabel = new DelegateCommand<Model.PCDDevice>(DoAddLabel);
 			AddPosition = new DelegateCommand<Model.PCDDevice>(DoAddPosition);
 			AddSlider = new DelegateCommand<Model.PCDDevice>(DoAddSlider);
-			Remove = new AutoCanExecuteCommandWrapper(new DelegateCommand<Model.GUI.PCDDeviceElement>(DoRemove, e => e != null));
+			AddButton = new DelegateCommand<Model.PCDDevice>(DoAddButton);
+			AddFadetimeEdit = new DelegateCommand<Model.PCDDevice>(DoAddFadetimeEdit);
+			AddFadetimeCheckbox = new DelegateCommand<Model.PCDDevice>(DoAddFadetimeCheckbox);
+			AddPresetSelector = new DelegateCommand<Model.PCDDevice>(DoAddPresetSelector);
 		}
 		
 		public ICommand AddDeviceAddress { get; private set; }
@@ -61,7 +64,13 @@ namespace Koinzer.pcdddfinwpf.Commands
 		
 		public ICommand AddSlider { get; private set; }
 		
-		public ICommand Remove { get; private set; }
+		public ICommand AddButton { get; private set; }
+		
+		public ICommand AddFadetimeEdit { get; private set; }
+		
+		public ICommand AddFadetimeCheckbox { get; private set; }
+		
+		public ICommand AddPresetSelector { get; private set; }
 		
 		public void DoAddDeviceAddress(Model.PCDDevice device)
 		{
@@ -108,11 +117,24 @@ namespace Koinzer.pcdddfinwpf.Commands
 			device.GUIElements.Add(new Model.GUI.PCDSlider(device));
 		}
 		
-		public void DoRemove(Model.GUI.PCDDeviceElement element)
+		public void DoAddButton(Model.PCDDevice device)
 		{
-			if (element.Parent == null)
-				return;
-			element.Parent.GUIElements.Remove(element);
+			device.GUIElements.Add(new Model.GUI.PCDButton(device));
+		}
+		
+		public void DoAddFadetimeEdit(Model.PCDDevice device)
+		{
+			device.GUIElements.Add(new Model.GUI.PCDFadetimeEdit(device));
+		}
+		
+		public void DoAddFadetimeCheckbox(Model.PCDDevice device)
+		{
+			device.GUIElements.Add(new Model.GUI.PCDFadetimeCheckbox(device));
+		}
+		
+		public void DoAddPresetSelector(Model.PCDDevice device)
+		{
+			device.GUIElements.Add(new Model.GUI.PCDPresetSelector(device));
 		}
 	}
 }

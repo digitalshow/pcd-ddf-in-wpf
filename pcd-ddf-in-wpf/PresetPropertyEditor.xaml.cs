@@ -19,33 +19,25 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
 
-namespace Koinzer.pcdddfinwpf.Model.GUI
+namespace Koinzer.pcdddfinwpf
 {
 	/// <summary>
-	/// Description of PCDDeviceImage.
+	/// Interaction logic for PresetPropertyEditor.xaml
 	/// </summary>
-	public class PCDDeviceImage: PCDDeviceElement
+	public partial class PresetPropertyEditor : UserControl
 	{
-		public PCDDeviceImage(PCDDevice device): base(device)
+		public PresetPropertyEditor()
 		{
-			Width = Height = 64;
-		}
-		
-		public override string GetNodeName()
-		{
-			return "deviceimage";
-		}
-		
-		public String Name {
-			get {
-				return "Device image";
-			}
-		}
-		
-		public override String ToString()
-		{
-			return "Device image";
+			InitializeComponent();
 		}
 	}
 }

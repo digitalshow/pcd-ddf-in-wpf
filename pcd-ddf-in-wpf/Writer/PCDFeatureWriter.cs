@@ -44,7 +44,7 @@ namespace Koinzer.pcdddfinwpf.Writer
 					devEl.Add(featEl = new XElement(feature.XmlNodeName));
 				int value = feature.InitValue;
 				int maxValue = (feature is Model.PCDDeviceFeatureRange) ? ((Model.PCDDeviceFeatureRange)feature).InitMaxValue : 0;
-				IEnumerable<Model.PCDChannelSubset> subsets = device.Channels.SelectMany(ch => ch.Subsets.Where(subset => subset.Feature == feature));
+				IEnumerable<Model.PCDChannelSubset> subsets = device.Channels.SelectMany(ch => ch.Subsets.Where(subset => subset.Features.Contains(feature)));
 				if (subsets.Count() == 0) {
 					value = feature.InitValue;
 				} else {

@@ -20,6 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq.Expressions;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -39,7 +41,12 @@ namespace Koinzer.pcdddfinwpf
 		{
 			InitializeComponent();
 			this.DataContext = Workspace.Instance;
-			Workspace.Instance.CurrentDevice = new Model.PCDDevice();
+			this.Closing += MainWindow_Closing;
+		}
+		
+		void MainWindow_Closing(object sender, CancelEventArgs e)
+		{
+			e.Cancel = !Workspace.Instance.CanClose();
 		}
 	}
 }

@@ -23,29 +23,46 @@ using System;
 namespace Koinzer.pcdddfinwpf.Model.GUI
 {
 	/// <summary>
-	/// Description of PCDDeviceImage.
+	/// Description of PCDFadeTimeCheckbox.
 	/// </summary>
-	public class PCDDeviceImage: PCDDeviceElement
+	public class PCDFadetimeCheckbox: PCDDeviceElement
 	{
-		public PCDDeviceImage(PCDDevice device): base(device)
+		public PCDFadetimeCheckbox(PCDDevice device): base(device)
 		{
-			Width = Height = 64;
+			Caption = "Use fadetime";
+			Checked = false;
+			Width = 100;
+			Height = 20;
+		}
+		
+		String caption;
+		
+		public String Caption {
+			get { return caption; }
+			set { SetProperty(ref caption, value); }
+		}
+		
+		bool _checked;
+		
+		public bool Checked {
+			get { return _checked; }
+			set { SetProperty(ref _checked, value); }
 		}
 		
 		public override string GetNodeName()
 		{
-			return "deviceimage";
+			return "checkbox";
+		}
+		
+		protected override bool GetHasSize()
+		{
+			return true;
 		}
 		
 		public String Name {
 			get {
-				return "Device image";
+				return "Fadetime checkbox";
 			}
-		}
-		
-		public override String ToString()
-		{
-			return "Device image";
 		}
 	}
 }

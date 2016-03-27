@@ -56,7 +56,7 @@ namespace Koinzer.pcdddfinwpf.Parser
 					Model.PCDDeviceFeatureRange rangeFeature = (Model.PCDDeviceFeatureRange)feature;
 					Model.PCDChannelRange subset = new Model.PCDChannelRange(channel);
 					subset.Name = feature.FeatureItemName;
-					subset.Feature = feature;
+					subset.Features.Add(feature);
 					subset.MinValue = featureValue;
 					subset.MaxValue = int.Parse(node.Attributes[rangeFeature.XmlAttributeMaxName].Value);
 					if (node.Attributes[rangeFeature.XmlAttributeMaxName] == null)
@@ -68,7 +68,7 @@ namespace Koinzer.pcdddfinwpf.Parser
 					bool doAdd = true;
 					while (collidingSubset != null) {
 						if (collidingSubset.MinValue == subset.MinValue && collidingSubset.MaxValue == subset.MaxValue) {
-							collidingSubset.Feature = feature;
+							collidingSubset.Features.Add(feature);
 							doAdd = false;
 							break;
 						} else if (collidingSubset.MinValue == subset.MinValue && collidingSubset.MaxValue == subset.MinValue && subset.MaxValue > subset.MinValue) {
@@ -90,7 +90,7 @@ namespace Koinzer.pcdddfinwpf.Parser
 					}
 				} else {
 					Model.PCDChannelItem item = new Model.PCDChannelItem(channel);
-					item.Feature = feature;
+					item.Features.Add(feature);
 					item.MinValue = featureValue;
 					item.MaxValue = featureValue;
 					item.SetValue = featureValue;
@@ -102,7 +102,7 @@ namespace Koinzer.pcdddfinwpf.Parser
 					bool doAdd = true;
 					while (collidingSubset != null) {
 						if ((collidingSubset is Model.PCDChannelItem) && (((Model.PCDChannelItem)collidingSubset).SetValue == item.SetValue)) {
-							collidingSubset.Feature = feature;
+							collidingSubset.Features.Add(feature);
 							doAdd = false;
 							break;
 						} else if (collidingSubset.MinValue == item.MinValue && collidingSubset.MaxValue == item.MinValue && item.MaxValue > item.MinValue) {

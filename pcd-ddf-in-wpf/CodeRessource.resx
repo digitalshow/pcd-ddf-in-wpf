@@ -198,4 +198,15 @@ end;</value>
           PositionXY.Top:=round(Fadenkreuz.Height * (get_channel('tilt')+get_channel('tiltfine')/256)/255)-(PositionXY.Height div 2);
         end;</value>
   </data>
+  <data name="ColorPickerChange" xml:space="preserve">
+    <value>begin
+  if colorpicker.visible then begin
+    colorpicker.visible:=false;
+    colorpicker2.visible:=true;
+  end else begin
+    colorpicker.visible:=true;
+    colorpicker2.visible:=false;
+  end;
+end;</value>
+  </data>
 </root>

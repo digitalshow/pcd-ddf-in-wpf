@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Linq;
 using System.Xml;
+using Koinzer.pcdddfinwpf.Model;
 
 namespace Koinzer.pcdddfinwpf.Parser
 {
@@ -83,14 +84,38 @@ namespace Koinzer.pcdddfinwpf.Parser
 						label.Caption = node.Attributes["caption"].Value;
 						goto case "_wh";
 					case "button":
-						System.Diagnostics.Debug.WriteLine("Button not supported.");
-						results.Messages.Add("Buttons are not supported yet.");
-						break;
+						var button = new Model.GUI.PCDButton(device);
+						el = button;
+						AssociatePresetByAction(node, button);
+						if (button.SpecialButtonAction == Model.GUI.PCDSpecialButtonAction.ChangeColorPicker)
+							button.Caption = node.Attributes["caption"].Value;
+						goto case "_wh";
 					case "dropdown":
+						if (node.Attributes["name"].Value == "presetSelector") {
+							el = new Model.GUI.PCDPresetSelector(device);
+							goto case "_wh";
+						}
 						var dropdown = new Model.GUI.PCDDropdown(device);
 						el = dropdown;
 						AssociateChannelByAction(node, dropdown);
 						goto case "_wh";
+					case "edit":
+						if (node.Attributes["name"].Value == "fadezeit") {
+							var edit = new Model.GUI.PCDFadetimeEdit(device);
+							el = edit;
+							edit.Value = int.Parse(node.Attributes["text"].Value);
+							goto case "_wh";
+						}
+						goto default;
+					case "checkbox":
+						if (node.Attributes["name"].Value == "usefadezeit") {
+							var checkbox = new Model.GUI.PCDFadetimeCheckbox(device);
+							el = checkbox;
+							checkbox.Checked = (node.Attributes["checked"].Value == "true");
+							checkbox.Caption = node.Attributes["caption"].Value;							
+							goto case "_wh";
+						}
+						goto default;
 					default:
 						System.Diagnostics.Debug.WriteLine("Unknown form node: " + node.Name);
 						results.Messages.Add("The type '"+node.Name+"' is not supported yet.");
@@ -123,6 +148,19 @@ namespace Koinzer.pcdddfinwpf.Parser
 				}
 			}
 			ctrl.AssociatedChannel = associatedChannel;			
+		}
+		
+		protected void AssociatePresetByAction(XmlNode node, Model.GUI.PCDButton ctrl)
+		{
+			String actionName = node.Attributes["action"].Value;
+			if (actionName == "onchangecolorpicker") {
+				ctrl.SpecialButtonAction = Model.GUI.PCDSpecialButtonAction.ChangeColorPicker;
+				return;
+			}
+			if (actionName.Length <= "call_preset_".Length)
+				return;
+			actionName = actionName.Substring("call_preset_".Length);
+			ctrl.AssociatedPreset = ctrl.Parent.Presets.FirstOrDefault(pr => Model.CodeHelper.MakeCodeFriendly(pr.Name).ToLower() == actionName);
 		}
 	}
 }

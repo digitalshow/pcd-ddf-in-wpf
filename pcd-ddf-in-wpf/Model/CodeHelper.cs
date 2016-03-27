@@ -19,33 +19,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 using System;
+using System.Text.RegularExpressions;
 
-namespace Koinzer.pcdddfinwpf.Model.GUI
+namespace Koinzer.pcdddfinwpf.Model
 {
 	/// <summary>
-	/// Description of PCDDeviceImage.
+	/// Description of CodeHelper.
 	/// </summary>
-	public class PCDDeviceImage: PCDDeviceElement
-	{
-		public PCDDeviceImage(PCDDevice device): base(device)
+	public static class CodeHelper
+	{		
+		static Regex codeFriendlyNameReplaceRegex = new Regex("[^a-zA-Z0-9\\-_]");
+		
+		public static String MakeCodeFriendly(this String input)
 		{
-			Width = Height = 64;
+			return codeFriendlyNameReplaceRegex.Replace(input, "").Replace('-','_');
 		}
 		
-		public override string GetNodeName()
-		{
-			return "deviceimage";
-		}
-		
-		public String Name {
-			get {
-				return "Device image";
-			}
-		}
-		
-		public override String ToString()
-		{
-			return "Device image";
-		}
 	}
 }

@@ -22,7 +22,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	xmlns:gui="clr-namespace:Koinzer.pcdddfinwpf.Model.GUI"
 	xmlns:model="clr-namespace:Koinzer.pcdddfinwpf.Model"
     xmlns:ctrls="clr-namespace:Koinzer.pcdddfinwpf.Controls"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
 	Name="ctrl">
+	<UserControl.Resources>
+		<ObjectDataProvider x:Key="specialButtonActions"
+			MethodName="GetValues" 
+			ObjectType="{x:Type system:Enum}">
+			<ObjectDataProvider.MethodParameters>
+				<x:Type TypeName="gui:PCDSpecialButtonAction" />
+			</ObjectDataProvider.MethodParameters>
+		</ObjectDataProvider>
+	</UserControl.Resources>
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
@@ -82,6 +92,56 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 						</GroupBox>
 					</StackPanel>
 				</DataTemplate>
+				<DataTemplate DataType="{x:Type gui:PCDButton}">
+					<StackPanel>
+						<GroupBox Header="Control">
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="0.5*" />
+									<ColumnDefinition Width="0.5*" />
+								</Grid.ColumnDefinitions>
+								<TextBlock Grid.Row="0" Grid.Column="0" Text="Special action" />
+								<ComboBox Grid.Row="0" Grid.Column="1" Name="specialAction" ItemsSource="{Binding Source={StaticResource specialButtonActions}}" SelectedItem="{Binding SpecialButtonAction}" />
+								<TextBlock Grid.Row="1" Grid.Column="0" Text="Preset" />
+								<ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Parent.Presets}" SelectedItem="{Binding AssociatedPreset}">
+									<ComboBox.ItemTemplate>
+										<DataTemplate>
+											<TextBlock Text="{Binding Name}" />
+										</DataTemplate>
+									</ComboBox.ItemTemplate>
+									<ComboBox.Style>
+										<Style TargetType="ComboBox">
+											<Setter Property="IsEnabled" Value="False" />
+											<Style.Triggers>
+												<DataTrigger Binding="{Binding SelectedItem, ElementName=specialAction}" Value="None">
+													<Setter Property="IsEnabled" Value="True" />
+												</DataTrigger>
+											</Style.Triggers>
+										</Style>
+									</ComboBox.Style>
+								</ComboBox>
+								<TextBlock Grid.Row="2" Grid.Column="0" Text="Caption" />
+								<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Caption, UpdateSourceTrigger=PropertyChanged}">
+									<TextBox.Style>
+										<Style TargetType="TextBox">
+											<Setter Property="IsEnabled" Value="True" />
+											<Style.Triggers>
+												<DataTrigger Binding="{Binding SelectedItem, ElementName=specialAction}" Value="None">
+													<Setter Property="IsEnabled" Value="False" />
+												</DataTrigger>
+											</Style.Triggers>
+										</Style>
+									</TextBox.Style>
+								</TextBox>
+							</Grid>
+						</GroupBox>
+					</StackPanel>			
+				</DataTemplate>
 				<DataTemplate DataType="{x:Type gui:PCDDeviceElement}">
 				</DataTemplate>
 			</ContentControl.Resources>
@@ -89,14 +149,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		<ContentControl Grid.Row="2" Content="{Binding}" Margin="4">
 			<ContentControl.Resources>
 				<DataTemplate DataType="{x:Type gui:PCDDeviceElement}">
-				</DataTemplate><!-- 
-				<DataTemplate DataType="{x:Type gui:PCDDropdown}">
-					<StackPanel>
-						<GroupBox Header="Dropdown">
-							<TextBlock>No settings</TextBlock>
-						</GroupBox>
-					</StackPanel>
-				</DataTemplate> -->
+				</DataTemplate>
 				<DataTemplate DataType="{x:Type gui:PCDLabel}">
 					<StackPanel>
 						<GroupBox Header="Dropdown">
@@ -110,6 +163,42 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 								</Grid.ColumnDefinitions>
 								<TextBlock Grid.Row="0" Grid.Column="0" Text="Caption" />
 								<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Caption, UpdateSourceTrigger=PropertyChanged}" />
+							</Grid>
+						</GroupBox>
+					</StackPanel>
+				</DataTemplate>
+				<DataTemplate DataType="{x:Type gui:PCDFadetimeCheckbox}">
+					<StackPanel>
+						<GroupBox Header="Fadetime Checkbox">
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="0.5*" />
+									<ColumnDefinition Width="0.5*" />
+								</Grid.ColumnDefinitions>
+								<CheckBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Checked" IsChecked="{Binding Checked}" />
+								<TextBlock Grid.Row="1" Grid.Column="0" Text="Caption" />
+								<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Caption, UpdateSourceTrigger=PropertyChanged}" />
+							</Grid>
+						</GroupBox>
+					</StackPanel>
+				</DataTemplate>
+				<DataTemplate DataType="{x:Type gui:PCDFadetimeEdit}">
+					<StackPanel>
+						<GroupBox Header="Fadetime Edit">
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="0.5*" />
+									<ColumnDefinition Width="0.5*" />
+								</Grid.ColumnDefinitions>
+								<TextBlock Grid.Row="0" Grid.Column="0" Text="Caption" />
+								<ctrls:IntegerUpDown Grid.Row="0" Grid.Column="1" Value="{Binding Value}" />
 							</Grid>
 						</GroupBox>
 					</StackPanel>

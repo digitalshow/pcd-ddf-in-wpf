@@ -23,29 +23,33 @@ using System;
 namespace Koinzer.pcdddfinwpf.Model.GUI
 {
 	/// <summary>
-	/// Description of PCDDeviceImage.
+	/// Description of PCDPresetSelector.
 	/// </summary>
-	public class PCDDeviceImage: PCDDeviceElement
+	public class PCDPresetSelector: PCDDeviceElement
 	{
-		public PCDDeviceImage(PCDDevice device): base(device)
+		public PCDPresetSelector(PCDDevice device): base(device)
 		{
-			Width = Height = 64;
 		}
 		
 		public override string GetNodeName()
 		{
-			return "deviceimage";
+			return "dropdown";
+		}
+		
+		protected override bool GetHasSize()
+		{
+			return true;
+		}
+		
+		public string getPostfix()
+		{
+			return "dropdown";
 		}
 		
 		public String Name {
 			get {
-				return "Device image";
+				return "Preset Selector";
 			}
-		}
-		
-		public override String ToString()
-		{
-			return "Device image";
 		}
 	}
 }

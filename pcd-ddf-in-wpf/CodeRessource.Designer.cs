@@ -61,6 +61,23 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
+		///   Looks up a localized string similar to begin
+		///  if colorpicker.visible then begin
+		///    colorpicker.visible:=false;
+		///    colorpicker2.visible:=true;
+		///  end else begin
+		///    colorpicker.visible:=true;
+		///    colorpicker2.visible:=false;
+		///  end;
+		///end;.
+		/// </summary>
+		internal static string ColorPickerChange {
+			get {
+				return ResourceManager.GetString("ColorPickerChange", resourceCulture);
+			}
+		}
+		
+		/// <summary>
 		///   Looks up a localized string similar to var
 		///  phi,r,x,y:Double;
 		///  pan, tilt, panfine, tiltfine:Double;

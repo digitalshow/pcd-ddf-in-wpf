@@ -35,13 +35,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 					<ColumnDefinition Width="0.5*" />
 				</Grid.ColumnDefinitions>
 				<TextBlock Grid.Row="0" Grid.Column="0" Text="Name" />
-				<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name}" />
+				<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
 				<TextBlock Grid.Row="1" Grid.Column="0" Text="Vendor" />
-				<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Vendor}" />
+				<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Vendor, UpdateSourceTrigger=PropertyChanged}" />
 				<TextBlock Grid.Row="2" Grid.Column="0" Text="Author" />
-				<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Author}" />
+				<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Author, UpdateSourceTrigger=PropertyChanged}" />
 				<TextBlock Grid.Row="3" Grid.Column="0" Text="Description" />
-				<TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Description}" />
+				<TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" />
 				<TextBlock Grid.Row="4" Grid.Column="0" Text="Image" />
 				<self:RelativeFileTextBox Grid.Row="4" Grid.Column="1" RelativeFolder="\Devicepictures" FileName="{Binding DeviceImageFileName}" />
 			</Grid>

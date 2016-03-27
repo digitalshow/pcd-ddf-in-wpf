@@ -22,7 +22,6 @@ using System;
 using System.Collections.Specialized;
 using System.Collections.ObjectModel;
 using System.Linq.Expressions;
-using System.Text.RegularExpressions;
 
 namespace Koinzer.pcdddfinwpf.Model
 {
@@ -37,6 +36,8 @@ namespace Koinzer.pcdddfinwpf.Model
 			Channels = new ObservableCollection<PCDDeviceChannel>();
 			Channels.CollectionChanged += new NotifyCollectionChangedEventHandler(Channels_CollectionChanged);
 			GUIElements = new ObservableCollection<Koinzer.pcdddfinwpf.Model.GUI.PCDDeviceElement>();
+			Presets = new ObservableCollection<PCDDevicePreset>();
+			
 			Name = "New Device";
 			Vendor = "Generic";
 			Author = System.Environment.UserName;
@@ -45,7 +46,8 @@ namespace Koinzer.pcdddfinwpf.Model
 			DeviceImageFileName = "";
 			FormWidth = 300;
 			FormHeight = 400;
-			GUIElements.Add(new GUI.PCDDeviceImage(this) { Left = 10, Top = 10, Width = 60, Height = 60 });
+			
+			GUIElements.Add(new GUI.PCDDeviceImage(this) { Left = 10, Top = 10 });
 			GUIElements.Add(new GUI.PCDDeviceName(this) { Left = 80, Top = 8 });
 			GUIElements.Add(new GUI.PCDDeviceAddress(this) { Left = 80, Top = 24 });
 			GUIElements.Add(new GUI.PCDDeviceDipSwitch(this) { Left = 80, Top = 40 });
@@ -57,10 +59,9 @@ namespace Koinzer.pcdddfinwpf.Model
 				Channels[i].Channel = i;
 		}
 		
-		Regex codeFriendlyNameReplaceRegex = new Regex("[^a-zA-Z0-9\\-_]");
 		public String CodeFriendlyName()
 		{
-			return codeFriendlyNameReplaceRegex.Replace(Vendor+"_"+Name, "").Replace('-','_');
+			return (Vendor+"_"+Name).MakeCodeFriendly();
 		}
 		
 		String name;
@@ -124,5 +125,7 @@ namespace Koinzer.pcdddfinwpf.Model
 		}
 		
 		public ObservableCollection<GUI.PCDDeviceElement> GUIElements { get; private set; }
+		
+		public ObservableCollection<PCDDevicePreset> Presets { get; private set; }
 	}
 }

@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 using System;
 using System.Xml.Linq;
+using Koinzer.pcdddfinwpf.Model;
 using Koinzer.pcdddfinwpf.Model.GUI; 
 
 namespace Koinzer.pcdddfinwpf.Writer
@@ -45,6 +46,7 @@ namespace Koinzer.pcdddfinwpf.Writer
 						new XAttribute("width", element.Width),
 						new XAttribute("height", element.Height));
 				bool isColorBox = ((element is PCDDropdown) && 
+				                   (((PCDDropdown)element).AssociatedChannel != null) &&
 				                   ((((PCDDropdown)element).AssociatedChannel.ChannelType == "color1") || 
 				                    (((PCDDropdown)element).AssociatedChannel.ChannelType == "color2")));
 				if (element is PCDDeviceControl) {
@@ -90,6 +92,45 @@ namespace Koinzer.pcdddfinwpf.Writer
 							joinNext = subset.JoinNext;
 						}
 					}
+				}
+				if (element is PCDButton) {
+					PCDButton button = (PCDButton)element;
+					if (button.SpecialButtonAction == PCDSpecialButtonAction.ChangeColorPicker) {
+						elEl.Add(new XAttribute("action", "onchangecolorpicker"),
+						         new XAttribute("caption", button.Caption));
+					} else {
+						Model.PCDDevicePreset preset = button.AssociatedPreset;
+						if (preset == null)
+							return;
+						string funcName = preset.Name.MakeCodeFriendly().ToLower();
+						if (String.IsNullOrEmpty(funcName)) {
+							results.AddMessage("The preset '{0}' could not be assigned to a button because the preset's name is not valid.", preset.Name);
+							continue;
+						}
+						elEl.Add(new XAttribute("action", "call_preset_" + funcName),
+						         new XAttribute("caption", preset.Name));
+					}
+				}
+				if (element is PCDPresetSelector) {
+					elEl.Add(new XAttribute("name", "presetSelector"),
+					         new XAttribute("action", "SelectPreset"));
+					foreach (Model.PCDDevicePreset preset in device.Presets) {
+						elEl.Add(new XElement("item", 
+							new XAttribute("caption", preset.Name),
+							new XAttribute("value", 0),
+							new XAttribute("picture", "")));
+					}
+				}
+				if (element is PCDFadetimeEdit) {
+					elEl.Add(new XAttribute("name", "fadezeit"), 
+					         new XAttribute("action", ""),
+					         new XAttribute("text", ((PCDFadetimeEdit)element).Value));
+				}
+				if (element is PCDFadetimeCheckbox) {
+					elEl.Add(new XAttribute("name", "usefadezeit"), 
+					         new XAttribute("action", ""),
+					         new XAttribute("caption", ((PCDFadetimeCheckbox)element).Caption),
+					         new XAttribute("checked", ((PCDFadetimeCheckbox)element).Checked ? "true":"false"));
 				}
 				formEl.Add(elEl);
 			}

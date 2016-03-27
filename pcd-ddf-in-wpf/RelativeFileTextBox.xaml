@@ -25,7 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			<ColumnDefinition Width="*" />
 			<ColumnDefinition Width="22" />
 		</Grid.ColumnDefinitions>
-		<TextBox HorizontalAlignment="Stretch" Text="{Binding FileName, ElementName=uc}" />
+		<TextBox HorizontalAlignment="Stretch" Text="{Binding FileName, ElementName=uc, UpdateSourceTrigger=PropertyChanged}" />
 		<Button Grid.Column="1" Click="Button_Click" Width="22">
 			<Image Width="16" Height="16" Source="Icons/folder-horizontal-open.png" />
 		</Button>

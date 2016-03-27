@@ -38,7 +38,6 @@ namespace Koinzer.pcdddfinwpf
 		public PropertyEditor()
 		{
 			InitializeComponent();
-			
 		}
 		
 		void ItemComboBox_Initialized(object sender, EventArgs e)
