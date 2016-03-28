@@ -46,7 +46,7 @@ namespace Koinzer.pcdddfinwpf.Parser
 			XmlNode colorsNode = GetNode(doc, xmlNodeName);
 			if (colorsNode == null)
 				return;
-			Model.PCDDeviceChannel channel = device.Channels.First(ch => ch.ChannelType.ToLower() == channelName);
+			Model.PCDDeviceChannel channel = device.Channels.FirstOrDefault(ch => ch.ChannelType.ToLower() == channelName);
 			if (channel == null)
 				return;
 			foreach (XmlNode item in colorsNode.ChildNodes) {

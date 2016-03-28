@@ -104,7 +104,7 @@ namespace Koinzer.pcdddfinwpf.Writer
 							return;
 						string funcName = preset.Name.MakeCodeFriendly().ToLower();
 						if (String.IsNullOrEmpty(funcName)) {
-							results.AddMessage("The preset '{0}' could not be assigned to a button because the preset's name is not valid.", preset.Name);
+							results.AddMessage("PCDGUIWriter.InvalidPresetName".Localize(), preset.Name);
 							continue;
 						}
 						elEl.Add(new XAttribute("action", "call_preset_" + funcName),

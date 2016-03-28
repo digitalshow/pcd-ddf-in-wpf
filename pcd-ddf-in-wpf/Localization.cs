@@ -20,28 +20,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 using System;
 
-namespace Koinzer.pcdddfinwpf.Model.GUI
+namespace Koinzer.pcdddfinwpf
 {
 	/// <summary>
-	/// Description of PCDPosition.
+	/// Description of Localization.
 	/// </summary>
-	public class PCDPosition: PCDDeviceElement
+	public static class Localization
 	{
-		public PCDPosition(PCDDevice device): base(device)
+		public static string Localize(this string key)
 		{
-			Width = 215;
-			Height = 215;
-		}
-		
-		public override string GetNodeName()
-		{
-			return "position";
-		}
-		
-		public String Name {
-			get {
-				return "GUI.Position".Localize();
-			}
+			String result = Strings.ResourceManager.GetString(key, Strings.Culture);
+			if (result == null)
+				result = "!" + key;
+			return result;
 		}
 	}
 }

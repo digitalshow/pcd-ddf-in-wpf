@@ -29,29 +29,29 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	<DockPanel>
 		<ToolBarPanel DockPanel.Dock="Top">
 			<ToolBar>
-				<Button Content="Add channel" Command="{Binding AddChannel, Source={StaticResource devCmd}}" CommandParameter="{Binding}" />
-				<Button Content="Add item" Command="{Binding AddItem, Source={StaticResource devChCmd}}" CommandParameter="{Binding SelectedChannel, ElementName=list}" />
-				<Button Content="Add range" Command="{Binding AddRange, Source={StaticResource devChCmd}}" CommandParameter="{Binding SelectedChannel, ElementName=list}" />
+				<Button Content="{self:Loc AddChannel}" Command="{Binding AddChannel, Source={StaticResource devCmd}}" CommandParameter="{Binding}" />
+				<Button Content="{self:Loc AddItem}" Command="{Binding AddItem, Source={StaticResource devChCmd}}" CommandParameter="{Binding SelectedChannel, ElementName=list}" />
+				<Button Content="{self:Loc AddRange}" Command="{Binding AddRange, Source={StaticResource devChCmd}}" CommandParameter="{Binding SelectedChannel, ElementName=list}" />
 				<Separator />
-				<Button Content="Insert item" Command="{Binding InsertItem, Source={StaticResource devChCmd}}" CommandParameter="{Binding Selected, ElementName=list}" />
-				<Button Content="Insert range" Command="{Binding InsertRange, Source={StaticResource devChCmd}}" CommandParameter="{Binding Selected, ElementName=list}" />
+				<Button Content="{self:Loc InsertItem}" Command="{Binding InsertItem, Source={StaticResource devChCmd}}" CommandParameter="{Binding Selected, ElementName=list}" />
+				<Button Content="{self:Loc InsertRange}" Command="{Binding InsertRange, Source={StaticResource devChCmd}}" CommandParameter="{Binding Selected, ElementName=list}" />
 				<Separator />
 				<Button Command="{Binding Up, Source={StaticResource objCmd}}" CommandParameter="{Binding SelectedChannel, ElementName=list}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/arrow-090.png" />
-						<TextBlock Text="Up" />
+						<TextBlock Text="{self:Loc Up}" />
 					</StackPanel>
 				</Button>
 				<Button Command="{Binding Down, Source={StaticResource objCmd}}" CommandParameter="{Binding SelectedChannel, ElementName=list}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/arrow-270.png" />
-						<TextBlock Text="Down" />
+						<TextBlock Text="{self:Loc Down}" />
 					</StackPanel>
 				</Button>
 				<Button Command="{Binding Remove, Source={StaticResource objCmd}}" CommandParameter="{Binding Selected, ElementName=list}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/cross.png" />
-						<TextBlock Text="Remove" />
+						<TextBlock Text="{self:Loc Remove}" />
 					</StackPanel>
 				</Button>
 			</ToolBar>

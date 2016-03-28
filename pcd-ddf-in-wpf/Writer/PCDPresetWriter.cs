@@ -40,7 +40,7 @@ namespace Koinzer.pcdddfinwpf.Writer
 				                                 new XAttribute("name", preset.Name));
 				foreach (Model.PCDDevicePresetChannel channel in preset.Channels) {
 					if (channel.Channel == null) {
-						results.AddMessage("Preset '{0}' contains an item that is not associated to a channel. It is ignored.");
+						results.AddMessage("PCDPresetWriter.PresetItemNotAssociated".Localize(), preset.Name);
 						continue;
 					}
 					int subset = -1;

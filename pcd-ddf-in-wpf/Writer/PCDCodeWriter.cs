@@ -168,7 +168,7 @@ namespace Koinzer.pcdddfinwpf.Writer
 				if (channel == null)
 					continue;
 				if (functions.ContainsKey("procedure "+slider.Name + "_changed();")) {
-					results.AddMessage("There are multiple sliders for channel '{0}'. Ignoring the latter.", channel.Name);
+					results.AddMessage("PCDCodeWriter.MultipleSlidersForChannel".Localize(), channel.Name);
 					continue;
 				}
 				StringBuilder functionChanged = new StringBuilder();
@@ -187,7 +187,7 @@ namespace Koinzer.pcdddfinwpf.Writer
 				functionCall.AppendLine("begin");
 				foreach (Model.PCDDevicePresetChannel channel in preset.Channels) {
 					if (channel.Channel == null) {
-						results.AddMessage("In preset '{0}', line {1} is not associated to a channel.", preset.Name, preset.Channels.IndexOf(channel));
+						results.AddMessage("PCDCodeWriter.FeatureLineNotAssociated".Localize(), preset.Name, preset.Channels.IndexOf(channel));
 						continue;
 					}
 					int value = channel.Value;

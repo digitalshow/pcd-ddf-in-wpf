@@ -78,7 +78,7 @@ namespace Koinzer.pcdddfinwpf.Parser
 							subset.MaxValue--;
 							subset.JoinNext = true;
 						} else {
-							results.AddMessage("Featurerange of feature '{0}' collides with subset '{1}'.", feature.ToString(), collidingSubset.Name);
+							results.AddMessage("PCDFeatureParser.Collide".Localize(), feature.ToString(), collidingSubset.Name);
 							doAdd = false;
 							break;
 						}
@@ -112,7 +112,7 @@ namespace Koinzer.pcdddfinwpf.Parser
 							item.MaxValue--;
 							item.JoinNext = true;
 						} else {
-							results.AddMessage("Featurerange of feature '{0}' collides with subset '{1}'.", feature.ToString(), collidingSubset.Name);
+							results.AddMessage("PCDFeatureParser.Collide".Localize(), feature.ToString(), collidingSubset.Name);
 							doAdd = false;
 							break;
 						}

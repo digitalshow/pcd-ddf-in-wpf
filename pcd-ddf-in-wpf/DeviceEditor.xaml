@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:self="clr-namespace:Koinzer.pcdddfinwpf">
 	<Grid>
-		<GroupBox Header="Device" Margin="4">
+		<GroupBox Header="{self:Loc Device}" Margin="4">
 			<Grid>
 				<Grid.RowDefinitions>
 					<RowDefinition Height="Auto" />
@@ -34,15 +34,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 					<ColumnDefinition Width="0.5*" />
 					<ColumnDefinition Width="0.5*" />
 				</Grid.ColumnDefinitions>
-				<TextBlock Grid.Row="0" Grid.Column="0" Text="Name" />
+				<TextBlock Grid.Row="0" Grid.Column="0" Text="{self:Loc Name}" />
 				<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
-				<TextBlock Grid.Row="1" Grid.Column="0" Text="Vendor" />
+				<TextBlock Grid.Row="1" Grid.Column="0" Text="{self:Loc Vendor}" />
 				<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Vendor, UpdateSourceTrigger=PropertyChanged}" />
-				<TextBlock Grid.Row="2" Grid.Column="0" Text="Author" />
+				<TextBlock Grid.Row="2" Grid.Column="0" Text="{self:Loc Author}" />
 				<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Author, UpdateSourceTrigger=PropertyChanged}" />
-				<TextBlock Grid.Row="3" Grid.Column="0" Text="Description" />
+				<TextBlock Grid.Row="3" Grid.Column="0" Text="{self:Loc Description}" />
 				<TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" />
-				<TextBlock Grid.Row="4" Grid.Column="0" Text="Image" />
+				<TextBlock Grid.Row="4" Grid.Column="0" Text="{self:Loc Image}" />
 				<self:RelativeFileTextBox Grid.Row="4" Grid.Column="1" RelativeFolder="\Devicepictures" FileName="{Binding DeviceImageFileName}" />
 			</Grid>
 		</GroupBox>

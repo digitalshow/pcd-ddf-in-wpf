@@ -38,7 +38,7 @@ namespace Koinzer.pcdddfinwpf
 			SaveToFile = new DelegateCommand(DoSaveToFile);
 			CurrentFileName = "";
 			if (PCDInstallationFinder.Instance.InstallationDirectory == null)
-				MessageBox.Show("PC_DIMMER installation could not be found.", "PC_DIMMER not found", MessageBoxButton.OK, MessageBoxImage.Warning);
+				MessageBox.Show("InstallationNotFoundText".Localize(), "InstallationNotFoundTitle".Localize(), MessageBoxButton.OK, MessageBoxImage.Warning);
 			ChangesTracker = new ChangesTracker();
 			CurrentDevice = new Koinzer.pcdddfinwpf.Model.PCDDevice();
 		}
@@ -72,7 +72,7 @@ namespace Koinzer.pcdddfinwpf
 		public void DoLoadFromFile()
 		{
 			Microsoft.Win32.OpenFileDialog ofd = new Microsoft.Win32.OpenFileDialog();
-			ofd.Filter = "PC_DIMMER DDF (*.pcddevc)|*.pcddevc|All files (*.*)|*.*";
+			ofd.Filter = "PC_DIMMER DDF (*.pcddevc)|*.pcddevc|"+"AllFiles".Localize()+" (*.*)|*.*";
 			if (ofd.ShowDialog().GetValueOrDefault() == true) {
 				if (CanClose())
 					LoadDeviceFromFile(ofd.FileName);
@@ -89,7 +89,7 @@ namespace Koinzer.pcdddfinwpf
 		public bool SaveToFileDialog()
 		{
 			Microsoft.Win32.SaveFileDialog sfd = new Microsoft.Win32.SaveFileDialog();
-			sfd.Filter = "PC_DIMMER DDF (*.pcddevc)|*.pcddevc|All files (*.*)|*.*";
+			sfd.Filter = "PC_DIMMER DDF (*.pcddevc)|*.pcddevc|"+"AllFiles".Localize()+" (*.*)|*.*";
 			String fileName = CurrentFileName;
 			if (String.IsNullOrEmpty(CurrentFileName)) {
 				fileName = CurrentDevice.CodeFriendlyName();
@@ -113,11 +113,11 @@ namespace Koinzer.pcdddfinwpf
 				Parser.PCDDeviceParser parser = new Parser.PCDDeviceParser();
 				CurrentDevice = parser.Load(fileName);
 				if (parser.Results.Messages.Count > 0)
-					MessageBox.Show("While loading, the following warnings were generated:\r\n\r\n- " +
+					MessageBox.Show("LoadWarnings".Localize() + "\r\n\r\n- " +
 					                String.Join("\r\n- ", parser.Results.Messages));
 				CurrentFileName = fileName;
 			} catch (Exception e) {
-				MessageBox.Show("File could not be loaded. \r\n\r\n " + e, "Error loading file", MessageBoxButton.OK, MessageBoxImage.Error);
+				ExceptionWindow.ShowException(new ApplicationException("FileCouldNotBeLoaded".Localize(), e));
 			}
 		}
 		
@@ -127,18 +127,18 @@ namespace Koinzer.pcdddfinwpf
 				Writer.PCDDeviceWriter writer = new Koinzer.pcdddfinwpf.Writer.PCDDeviceWriter();
 				Writer.WriteResults results = writer.Save(CurrentDevice, fileName);
 				if (results.Messages.Count > 0)
-					MessageBox.Show("While saving, the following warnings were generated:\r\n\r\n- " +
+					MessageBox.Show("SaveWarnings".Localize() + "\r\n\r\n- " +
 					                String.Join("\r\n- ", results.Messages));
 				CurrentFileName = fileName;
 			} catch (Exception e) {
-				MessageBox.Show("File could not be saved. \r\n\r\n " + e, "Error saving file", MessageBoxButton.OK, MessageBoxImage.Error);
+				ExceptionWindow.ShowException(new ApplicationException("FileCouldNotBeSaved".Localize(), e));
 			}
 		}
 		
 		public bool CanClose()
 		{
 			if (ChangesTracker.Changed) {
-				switch (MessageBox.Show("Do you want to save the file?", "File modified", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel)) {
+				switch (MessageBox.Show("SaveQuestionText".Localize(), "SaveQuestionTitle".Localize(), MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel)) {
 					case MessageBoxResult.Cancel:
 						return false;
 					case MessageBoxResult.No:

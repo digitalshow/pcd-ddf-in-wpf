@@ -61,7 +61,7 @@ namespace Koinzer.pcdddfinwpf.Commands
 			if (subset == null || subset.Parent == null)
 				return;
 			if (subset.MinValue == subset.MaxValue)
-				throw new ArgumentException("The element selected needs to have space for the new element.");
+				throw new ArgumentException("TheElementSelectedNeedsToHaveSpaceForTheNewElement".Localize());
 			Model.PCDChannelItem item = new Koinzer.pcdddfinwpf.Model.PCDChannelItem(subset.Parent);
 			item.MinValue = subset.MinValue;
 			item.MaxValue = subset.MinValue;
@@ -80,7 +80,7 @@ namespace Koinzer.pcdddfinwpf.Commands
 			if (subset == null || subset.Parent == null)
 				return;
 			if (subset.MinValue == subset.MaxValue)
-				throw new ArgumentException("The element selected needs to have space for the new element.");
+				throw new ArgumentException("TheElementSelectedNeedsToHaveSpaceForTheNewElement".Localize());
 			Model.PCDChannelRange range = new Koinzer.pcdddfinwpf.Model.PCDChannelRange(subset.Parent);
 			range.MinValue = subset.MinValue;
 			range.MaxValue = subset.MinValue;

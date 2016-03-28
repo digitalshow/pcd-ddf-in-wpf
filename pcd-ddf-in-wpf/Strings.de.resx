@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="New" xml:space="preserve">
+    <value>Neu</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Öffnen...</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Speichern...</value>
+  </data>
+  <data name="not named" xml:space="preserve">
+    <value>unbenannt</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="AddChannel" xml:space="preserve">
+    <value>Kanal hinzufügen</value>
+  </data>
+  <data name="AddItem" xml:space="preserve">
+    <value>Eintrag hinzufügen</value>
+  </data>
+  <data name="AddRange" xml:space="preserve">
+    <value>Bereich hinzufügen</value>
+  </data>
+  <data name="AllFiles" xml:space="preserve">
+    <value>Alle Dateien</value>
+  </data>
+  <data name="Amber" xml:space="preserve">
+    <value>Bernsteinfarbe</value>
+  </data>
+  <data name="Author" xml:space="preserve">
+    <value>Autor</value>
+  </data>
+  <data name="Caption" xml:space="preserve">
+    <value>Beschriftung</value>
+  </data>
+  <data name="Channel" xml:space="preserve">
+    <value>Kanal</value>
+  </data>
+  <data name="Channels" xml:space="preserve">
+    <value>Kanäle</value>
+  </data>
+  <data name="ChannelType" xml:space="preserve">
+    <value>Kanaltyp</value>
+  </data>
+  <data name="Checked" xml:space="preserve">
+    <value>Angehakt</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Farbe</value>
+  </data>
+  <data name="Control" xml:space="preserve">
+    <value>Steuerelement</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="Device" xml:space="preserve">
+    <value>Gerät</value>
+  </data>
+  <data name="DeviceAmberEditor.AmberGFactor" xml:space="preserve">
+    <value>Grünfaktor Bernsteinfarbe</value>
+  </data>
+  <data name="DeviceAmberEditor.AmberRFactor" xml:space="preserve">
+    <value>Rotfaktor Bernsteinfarbe</value>
+  </data>
+  <data name="DeviceAmberEditor.CompensateB" xml:space="preserve">
+    <value>Blau kompensieren</value>
+  </data>
+  <data name="DeviceAmberEditor.CompensateRG" xml:space="preserve">
+    <value>Rot und grün kompensieren</value>
+  </data>
+  <data name="DeviceAmberEditor.UseAmbermixing" xml:space="preserve">
+    <value>Bernsteinfarbenmischung nutzen</value>
+  </data>
+  <data name="Dimmer" xml:space="preserve">
+    <value>Helligkeit</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Runter</value>
+  </data>
+  <data name="Dropdown" xml:space="preserve">
+    <value>Dropdown</value>
+  </data>
+  <data name="ExceptionWindow.Message" xml:space="preserve">
+    <value>Es ist ein Programmfehler aufgetreten. Bitte melden Sie Programmfehler dem Entwickler. Kopieren Sie dazu den Text unten. Mehr unter "Über" im Hauptfenster.</value>
+  </data>
+  <data name="ExceptionWindow.ExceptionTextHeader" xml:space="preserve">
+    <value>Fehlerinformationen</value>
+  </data>
+  <data name="ExceptionWindow.MessageHeader" xml:space="preserve">
+    <value>Programmfehler</value>
+  </data>
+  <data name="Fade" xml:space="preserve">
+    <value>Fade</value>
+  </data>
+  <data name="FadeTimeMs" xml:space="preserve">
+    <value>Fadezeit [ms]</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>Merkmale</value>
+  </data>
+  <data name="FeatureSelector.FeatureRangeErrorText" xml:space="preserve">
+    <value>Dieses Merkmal ist kein Bereichsmerkmal und kann nur Einträgen zugewiesen werden.</value>
+  </data>
+  <data name="FeatureSelector.FeatureRangeErrorTitle" xml:space="preserve">
+    <value>Fehler beim Hinzufügen des Merkmals</value>
+  </data>
+  <data name="FileCouldNotBeLoaded" xml:space="preserve">
+    <value>Datei konnte nicht geladen werden.</value>
+  </data>
+  <data name="FileCouldNotBeSaved" xml:space="preserve">
+    <value>Datei konnte nicht gespeichert werden.</value>
+  </data>
+  <data name="Gobo 1 Rotation" xml:space="preserve">
+    <value>Gobo 1 Rotation</value>
+  </data>
+  <data name="Gobo 2 Rotation" xml:space="preserve">
+    <value>Gobo 2 Rotation</value>
+  </data>
+  <data name="GUI" xml:space="preserve">
+    <value>GUI</value>
+  </data>
+  <data name="GUI.Colorpicker" xml:space="preserve">
+    <value>Farbauswahl</value>
+  </data>
+  <data name="GUI.DeviceAddress" xml:space="preserve">
+    <value>Geräteadresse</value>
+  </data>
+  <data name="GUI.DeviceImage" xml:space="preserve">
+    <value>Gerätebild</value>
+  </data>
+  <data name="GUI.DeviceName" xml:space="preserve">
+    <value>Gerätename</value>
+  </data>
+  <data name="GUI.Dipswitch" xml:space="preserve">
+    <value>Dipschalter</value>
+  </data>
+  <data name="GUI.FadetimeCheckbox" xml:space="preserve">
+    <value>Fadezeitschalter</value>
+  </data>
+  <data name="GUI.FadetimeEdit" xml:space="preserve">
+    <value>Fadezeitfeld</value>
+  </data>
+  <data name="GUI.Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="GUI.PresetSelector" xml:space="preserve">
+    <value>Presetauswahl</value>
+  </data>
+  <data name="GUIEditor.AddButton" xml:space="preserve">
+    <value>Button hinzufügen</value>
+  </data>
+  <data name="GUIEditor.AddColorpicker" xml:space="preserve">
+    <value>Farbauswahl hinzufügen</value>
+  </data>
+  <data name="GUIEditor.AddDeviceAddress" xml:space="preserve">
+    <value>Geräteadresse hinzufügen</value>
+  </data>
+  <data name="GUIEditor.AddDeviceDipswitch" xml:space="preserve">
+    <value>Dipschalter hinzufügen</value>
+  </data>
+  <data name="GUIEditor.AddDeviceImage" xml:space="preserve">
+    <value>Gerätebild hinzufügen</value>
+  </data>
+  <data name="GUIEditor.AddDeviceName" xml:space="preserve">
+    <value>Gerätename hinzufügen</value>
+  </data>
+  <data name="GUIEditor.AddDropdown" xml:space="preserve">
+    <value>Dropdown hinzufügen</value>
+  </data>
+  <data name="GUIEditor.AddFadetimeCheckbox" xml:space="preserve">
+    <value>Fadezeitschalter hinzufügen</value>
+  </data>
+  <data name="GUIEditor.AddFadetimeEdit" xml:space="preserve">
+    <value>Fadezeitfeld hinzufügen</value>
+  </data>
+  <data name="GUIEditor.AddLabel" xml:space="preserve">
+    <value>Beschriftung hinzufügen</value>
+  </data>
+  <data name="GUIEditor.AddPosition" xml:space="preserve">
+    <value>Position hinzufügen</value>
+  </data>
+  <data name="GUIEditor.AddPresetSelector" xml:space="preserve">
+    <value>Presetauswahl hinzufügen</value>
+  </data>
+  <data name="GUIEditor.AddSlider" xml:space="preserve">
+    <value>Schieberegler hinzufügen</value>
+  </data>
+  <data name="GUIPropertyEditor.PositionAndSize" xml:space="preserve">
+    <value>Position und Größe</value>
+  </data>
+  <data name="GUIPropertyEditor.SpecialAction" xml:space="preserve">
+    <value>Spezielle Aktion</value>
+  </data>
+  <data name="Height" xml:space="preserve">
+    <value>Höhe</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Icon</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="InitValue" xml:space="preserve">
+    <value>Init-Wert</value>
+  </data>
+  <data name="InsertItem" xml:space="preserve">
+    <value>Eintrag einfügen</value>
+  </data>
+  <data name="InsertRange" xml:space="preserve">
+    <value>Bereich einfügen</value>
+  </data>
+  <data name="InstallationNotFoundText" xml:space="preserve">
+    <value>PC_DIMMER-Installation konnte nicht unter dem Standardpfad gefunden werden. Die Auswahl von Bildern ist nur eingeschränkt möglich.</value>
+  </data>
+  <data name="InstallationNotFoundTitle" xml:space="preserve">
+    <value>PC_DIMMER-Installation nicht gefunden</value>
+  </data>
+  <data name="Iris" xml:space="preserve">
+    <value>Iris</value>
+  </data>
+  <data name="Iris.Closed" xml:space="preserve">
+    <value>Geschlossen</value>
+  </data>
+  <data name="Iris.Open" xml:space="preserve">
+    <value>Offen</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Eintrag</value>
+  </data>
+  <data name="Left" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="AboutBox.Libraries" xml:space="preserve">
+    <value>Bibliotheken</value>
+  </data>
+  <data name="AboutBox.License" xml:space="preserve">
+    <value>Lizenz</value>
+  </data>
+  <data name="LoadWarnings" xml:space="preserve">
+    <value>Beim Laden der Datei wurden folgende Warnungen generiert.</value>
+  </data>
+  <data name="Max" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Nachricht</value>
+  </data>
+  <data name="Min" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="New Device" xml:space="preserve">
+    <value>Neues Gerät</value>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>Aus</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="PCDChannelSubset.FeatureRangeError" xml:space="preserve">
+    <value>Dieses Merkmal ist kein Bereichsmerkmal und kann nur Einträgen zugewiesen werden.</value>
+  </data>
+  <data name="PCDCodeWriter.FeatureLineNotAssociated" xml:space="preserve">
+    <value>Im Preset '{0}' wurde Zeile {1} keinem Kanal zugewiesen.</value>
+  </data>
+  <data name="PCDCodeWriter.MultipleSlidersForChannel" xml:space="preserve">
+    <value>Es wurden mehrere Schieberegler für Kanal '{0}' angelegt. Letztere werden ignoriert.</value>
+  </data>
+  <data name="PCDDeviceParser.UnknownGenerator" xml:space="preserve">
+    <value>Dieses DDF wurde nicht mit PCD-DDF-in-WPF erzeugt! Ich werde einige Details nicht laden können.</value>
+  </data>
+  <data name="PCDFadetimeCheckbox.UseFadetime" xml:space="preserve">
+    <value>Fadezeit benutzen</value>
+  </data>
+  <data name="PCDFeatureParser.Collide" xml:space="preserve">
+    <value>Bereich des Merkmals '{0}' überlappt mit Untermenge '{1}'.</value>
+  </data>
+  <data name="PCDFeatureWriter.DifferentChannels" xml:space="preserve">
+    <value>Merkmal '{0}' kann nicht angewendet werden. Ein anderes Merkmal, welches auf dem gleichen Kanal liegen sollte, ist auf einem anderen.</value>
+  </data>
+  <data name="PCDFeatureWriter.FeatureAppliedMoreThanOnce" xml:space="preserve">
+    <value>Merkmal '{0}' wurde mehrmals angewendet.</value>
+  </data>
+  <data name="PCDGUIParser.NodeTypeNotSupported" xml:space="preserve">
+    <value>Der Typ '{0}' wird noch nicht unterstützt.</value>
+  </data>
+  <data name="PCDGUIWriter.InvalidPresetName" xml:space="preserve">
+    <value>Das Preset '{0}' konnte einem Button nicht zugewiesen werden da der Presetname ungültig ist.</value>
+  </data>
+  <data name="PCDPresetWriter.PresetItemNotAssociated" xml:space="preserve">
+    <value>Beim Preset '{0}' wurde ein Eintrag keinem Kanal zugeordnet.</value>
+  </data>
+  <data name="PngImage" xml:space="preserve">
+    <value>Portable Network Graphic</value>
+  </data>
+  <data name="Preset" xml:space="preserve">
+    <value>Preset</value>
+  </data>
+  <data name="PresetChannel" xml:space="preserve">
+    <value>Presetkanal</value>
+  </data>
+  <data name="PresetEditor.AddChannel" xml:space="preserve">
+    <value>Kanal hinzufügen</value>
+  </data>
+  <data name="PresetEditor.AddPreset" xml:space="preserve">
+    <value>Preset hinzufügen</value>
+  </data>
+  <data name="PresetEditor.ClonePreset" xml:space="preserve">
+    <value>Preset klonen</value>
+  </data>
+  <data name="Presets" xml:space="preserve">
+    <value>Presets</value>
+  </data>
+  <data name="Prisma" xml:space="preserve">
+    <value>Prisma</value>
+  </data>
+  <data name="Prisma Rotation" xml:space="preserve">
+    <value>Prisma-Rotation</value>
+  </data>
+  <data name="PropertyEditor.Joinwithnextitem" xml:space="preserve">
+    <value>Mit nächstem Eintrag/Bereich verschmelzen</value>
+  </data>
+  <data name="Range" xml:space="preserve">
+    <value>Bereich</value>
+  </data>
+  <data name="Range Left Min-Max" xml:space="preserve">
+    <value>Bereich Links Min-Max</value>
+  </data>
+  <data name="Range Min-Max" xml:space="preserve">
+    <value>Bereich Min-Max</value>
+  </data>
+  <data name="Range Off-Max" xml:space="preserve">
+    <value>Bereich Aus-Max</value>
+  </data>
+  <data name="Range Right Min-Max" xml:space="preserve">
+    <value>Bereich Rechts Min-Max</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="SaveQuestionText" xml:space="preserve">
+    <value>Möchten Sie die Datei speichern?</value>
+  </data>
+  <data name="SaveQuestionTitle" xml:space="preserve">
+    <value>Datei geändert</value>
+  </data>
+  <data name="SaveWarnings" xml:space="preserve">
+    <value>Beim Speichern der Datei wurden folgende Warnungen erzeugt.</value>
+  </data>
+  <data name="SetValue" xml:space="preserve">
+    <value>Set-Wert</value>
+  </data>
+  <data name="Shutter" xml:space="preserve">
+    <value>Shutter</value>
+  </data>
+  <data name="Shutter.Closed" xml:space="preserve">
+    <value>Geschlossen</value>
+  </data>
+  <data name="Shutter.Open" xml:space="preserve">
+    <value>Offen</value>
+  </data>
+  <data name="Single" xml:space="preserve">
+    <value>Einfach</value>
+  </data>
+  <data name="Strobe" xml:space="preserve">
+    <value>Strobe</value>
+  </data>
+  <data name="Subset" xml:space="preserve">
+    <value>Untermenge</value>
+  </data>
+  <data name="TheElementSelectedNeedsToHaveSpaceForTheNewElement" xml:space="preserve">
+    <value>Das selektierte Element muss Platz für das neue Element haben. </value>
+  </data>
+  <data name="Top" xml:space="preserve">
+    <value>Oben</value>
+  </data>
+  <data name="Triple" xml:space="preserve">
+    <value>Dreifach</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Hoch</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Wert</value>
+  </data>
+  <data name="Vendor" xml:space="preserve">
+    <value>Hersteller</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Breite</value>
+  </data>
+  <data name="GUIEditor.Form" xml:space="preserve">
+    <value>Formular</value>
+  </data>
+  <data name="AboutBox.ContributingHeader" xml:space="preserve">
+    <value>Mitmachen, Helfen, Fehler melden</value>
+  </data>
+  <data name="AboutBox.TranslatingText" xml:space="preserve">
+    <value>Möchten Sie das Programm in eine andere Sprache übersetzen oder Fehler korrigieren, kontaktieren Sie mich per E-Mail.</value>
+  </data>
+  <data name="AboutBox.Translating" xml:space="preserve">
+    <value>Übersetzen</value>
+  </data>
+  <data name="AboutBox.ForkMeOn" xml:space="preserve">
+    <value>Fork me on</value>
+  </data>
+  <data name="AboutBox.GitHub" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="AboutBox.Contributing" xml:space="preserve">
+    <value>Mitwirken</value>
+  </data>
+  <data name="AboutBox.PleaseReportAnyIssuesOnThe" xml:space="preserve">
+    <value>Bitte melden Sie jegliche auftretende Fehler auf der</value>
+  </data>
+  <data name="AboutBox.GitHubIssuesPage" xml:space="preserve">
+    <value>Issues-Seite auf GitHub</value>
+  </data>
+  <data name="AboutBox.ReportingErrors" xml:space="preserve">
+    <value>Fehler melden und Funktionen vorschlagen</value>
+  </data>
+</root>

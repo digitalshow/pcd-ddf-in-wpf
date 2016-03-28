@@ -109,6 +109,10 @@
       <DependentUpon>DeviceEditor.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ExceptionWindow.xaml.cs">
+      <DependentUpon>ExceptionWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GUIEditor.xaml.cs">
       <DependentUpon>GUIEditor.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -117,6 +121,8 @@
       <DependentUpon>GUIPropertyEditor.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Localization.cs" />
+    <Compile Include="LocExtension.cs" />
     <Compile Include="Model\CodeHelper.cs" />
     <Compile Include="Model\GUI\PCDButton.cs" />
     <Compile Include="Model\GUI\PCDColorPicker.cs" />
@@ -189,6 +195,10 @@
       <SubType>Code</SubType>
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="TextRessource.Designer.cs">
       <DependentUpon>TextRessource.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -212,6 +222,7 @@
     <Page Include="Controls\IntegerUpDown.xaml" />
     <Page Include="DeviceAmberEditor.xaml" />
     <Page Include="DeviceEditor.xaml" />
+    <Page Include="ExceptionWindow.xaml" />
     <Page Include="GUIEditor.xaml" />
     <Page Include="GUIPropertyEditor.xaml" />
     <Page Include="PresetEditor.xaml" />
@@ -223,6 +234,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <Resource Include="Icons\tick.png" />
     <Resource Include="Icons\plus.png" />
     <Resource Include="Icons\script-block.png" />
     <Resource Include="Icons\script--plus.png" />
@@ -258,6 +270,13 @@
       <LastGenOutput>CodeRessource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PrismMvvm\Resources.resx" />
+    <EmbeddedResource Include="Strings.de.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="TextRessource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>TextRessource.Designer.cs</LastGenOutput>

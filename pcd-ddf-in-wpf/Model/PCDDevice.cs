@@ -38,7 +38,7 @@ namespace Koinzer.pcdddfinwpf.Model
 			GUIElements = new ObservableCollection<Koinzer.pcdddfinwpf.Model.GUI.PCDDeviceElement>();
 			Presets = new ObservableCollection<PCDDevicePreset>();
 			
-			Name = "New Device";
+			Name = "New Device".Localize();
 			Vendor = "Generic";
 			Author = System.Environment.UserName;
 			Description = "";

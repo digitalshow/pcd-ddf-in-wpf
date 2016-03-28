@@ -31,5 +31,11 @@ namespace Koinzer.pcdddfinwpf
 	/// </summary>
 	public partial class App : Application
 	{
+		
+		void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+		{
+			ExceptionWindow.ShowException(e.Exception);
+			e.Handled = true;
+		}
 	}
 }

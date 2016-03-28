@@ -48,9 +48,9 @@ namespace Koinzer.pcdddfinwpf.Model
 					PCDDeviceFeature feature = o as PCDDeviceFeature;
 					if (feature == null) continue;
 					if (!(feature is PCDDeviceFeatureRange) && (this is PCDChannelRange)) {
-						throw new ArgumentException("This feature is not a range and can only be applied to items.");
+						throw new ArgumentException("PCDChannelSubset.FeatureRangeError".Localize());
 					}
-					if (Name == "<Not named>")
+					if (Name == "<Not named>".Localize())
 						Name = feature.FeatureItemName;
 					}
 			}

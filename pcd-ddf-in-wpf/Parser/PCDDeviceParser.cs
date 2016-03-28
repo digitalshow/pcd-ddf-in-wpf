@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Media;
 using System.Xml;
 
@@ -40,7 +41,13 @@ namespace Koinzer.pcdddfinwpf.Parser
 		{
 			Model.PCDDevice device = new Koinzer.pcdddfinwpf.Model.PCDDevice();
 			XmlDocument doc = new XmlDocument();
-			doc.Load(fileName);
+			String xml = File.ReadAllText(fileName, System.Text.Encoding.GetEncoding("ISO-8859-1"));
+			
+			// Fix for wrong string concatenation of the original DDF editor
+			xml = xml.Replace("\"AmberColorG=\"", "\" AmberColorG=\"");
+			
+			doc.LoadXml(xml);
+			//doc.Load(fileName);
 			ParseResults results = new ParseResults();
 			Parse(doc, device, results);
 			new PCDDeviceAmberParser().Parse(doc, device, results);
@@ -64,7 +71,7 @@ namespace Koinzer.pcdddfinwpf.Parser
 			device.Description = GetNodeContent(doc, "description");
 			device.Generator = GetNodeContent(doc, "generator");
 			if (device.Generator != "PCD-DDF-in-WPF") {
-				results.Messages.Add("This DDF was not created using PCD-DDF-in-WPF! I won't be able to load many of the details in this file.");
+				results.Messages.Add("PCDDeviceParser.UnknownGenerator".Localize());
 			}
 			
 			XmlNode channels = GetNode(doc, "channels");

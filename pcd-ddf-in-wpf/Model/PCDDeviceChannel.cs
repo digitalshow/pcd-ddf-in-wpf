@@ -35,7 +35,7 @@ namespace Koinzer.pcdddfinwpf.Model
 			MaxValue = 255;
 			InitValue = 0;
 			ChannelType = "dimmer";
-			Name = "<Not named>";
+			Name = "<Not named>".Localize();
 			Parent = parent;
 		}
 		
@@ -105,7 +105,7 @@ namespace Koinzer.pcdddfinwpf.Model
 		public String ChannelType {
 			get { return channelType; }
 			set {
-				if (Name == "<Not named>")
+				if (Name == "<Not named>".Localize())
 					Name = value.Substring(0,1).ToUpper() + value.Substring(1).ToLower();
 				SetProperty(ref channelType, value.ToLower());
 			}

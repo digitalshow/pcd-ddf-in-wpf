@@ -29,7 +29,7 @@ namespace Koinzer.pcdddfinwpf.Model.GUI
 	{
 		public PCDFadetimeCheckbox(PCDDevice device): base(device)
 		{
-			Caption = "Use fadetime";
+			Caption = "PCDFadetimeCheckbox.UseFadetime".Localize();
 			Checked = false;
 			Width = 100;
 			Height = 20;
@@ -61,7 +61,7 @@ namespace Koinzer.pcdddfinwpf.Model.GUI
 		
 		public String Name {
 			get {
-				return "Fadetime checkbox";
+				return "GUI.FadetimeCheckbox".Localize();
 			}
 		}
 	}

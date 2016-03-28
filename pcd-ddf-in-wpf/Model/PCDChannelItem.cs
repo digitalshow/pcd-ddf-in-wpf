@@ -30,7 +30,7 @@ namespace Koinzer.pcdddfinwpf.Model
 	{
 		public PCDChannelItem(PCDDeviceChannel channel): base(channel)
 		{
-			Name = "<Not named>";
+			Name = "<Not named>".Localize();
 			IconFileName = "";
 		}
 		

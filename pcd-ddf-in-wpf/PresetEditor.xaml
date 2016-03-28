@@ -32,38 +32,38 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 				<Button Command="{Binding AddPreset, Source={StaticResource devPreCmd}}" CommandParameter="{Binding}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/script--plus.png" />
-						<TextBlock Text="Add Preset" />
+						<TextBlock Text="{self:Loc PresetEditor.AddPreset}" />
 					</StackPanel>
 				</Button>
 				<Button Command="{Binding AddPresetChannel, Source={StaticResource devPreCmd}}" CommandParameter="{Binding SelectedPreset, ElementName=list}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/script-block.png" />
-						<TextBlock Text="Add Channel" />
+						<TextBlock Text="{self:Loc PresetEditor.AddChannel}" />
 					</StackPanel>
 				</Button>
 				<Separator />
 				<Button Command="{Binding Clone, Source={StaticResource devPreCmd}}" CommandParameter="{Binding SelectedPreset, ElementName=list}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/scripts.png" />
-						<TextBlock Text="Clone Preset" />
+						<TextBlock Text="{self:Loc PresetEditor.ClonePreset}" />
 					</StackPanel>
 				</Button>
 				<Button Command="{Binding Up, Source={StaticResource objCmd}}" CommandParameter="{Binding Selected, ElementName=list}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/arrow-090.png" />
-						<TextBlock Text="Up" />
+						<TextBlock Text="{self:Loc Up}" />
 					</StackPanel>
 				</Button>
 				<Button Command="{Binding Down, Source={StaticResource objCmd}}" CommandParameter="{Binding Selected, ElementName=list}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/arrow-270.png" />
-						<TextBlock Text="Down" />
+						<TextBlock Text="{self:Loc Down}" />
 					</StackPanel>
 				</Button>
 				<Button Command="{Binding Remove, Source={StaticResource objCmd}}" CommandParameter="{Binding Selected, ElementName=list}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/cross.png" />
-						<TextBlock Text="Remove" />
+						<TextBlock Text="{self:Loc Remove}" />
 					</StackPanel>
 				</Button>
 			</ToolBar>

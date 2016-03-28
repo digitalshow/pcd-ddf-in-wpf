@@ -31,7 +31,7 @@ namespace Koinzer.pcdddfinwpf.Model
 	{
 		public PCDDevicePreset(PCDDevice parent)
 		{
-			Name = "<Not named>";
+			Name = "<Not named>".Localize();
 			Parent = parent;
 			Channels = new ObservableCollection<PCDDevicePresetChannel>();
 		}

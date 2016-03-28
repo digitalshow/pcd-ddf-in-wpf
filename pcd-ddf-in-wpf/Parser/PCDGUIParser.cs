@@ -118,7 +118,7 @@ namespace Koinzer.pcdddfinwpf.Parser
 						goto default;
 					default:
 						System.Diagnostics.Debug.WriteLine("Unknown form node: " + node.Name);
-						results.Messages.Add("The type '"+node.Name+"' is not supported yet.");
+						results.AddMessage("PCDGUIParser.NodeTypeNotSupported".Localize(), node.Name);
 						break;
 					case "_wh": // For all sized nodes
 						el.Width = int.Parse(node.Attributes["width"].Value);

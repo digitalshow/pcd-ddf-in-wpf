@@ -45,7 +45,7 @@ namespace Koinzer.pcdddfinwpf.Model.GUI
 		
 		public String Name {
 			get {
-				return "Dip switch";
+				return "GUI.Dipswitch".Localize();
 			}
 		}
 		

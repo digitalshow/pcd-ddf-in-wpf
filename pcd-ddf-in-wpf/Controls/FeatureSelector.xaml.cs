@@ -55,7 +55,7 @@ namespace Koinzer.pcdddfinwpf.Controls
 			if (Subset.Features.Contains(feature))
 				return;
 			if (!(feature is PCDDeviceFeatureRange) && (Subset is PCDChannelRange)) {
-				MessageBox.Show("This feature is not a range and can only be applied to items.", "Error adding feature", MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show("FeatureSelector.FeatureRangeErrorText".Localize(), "FeatureSelector.FeatureRangeErrorTitle".Localize(), MessageBoxButton.OK, MessageBoxImage.Error);
 				return;
 			}
 			Subset.Features.Add(feature);

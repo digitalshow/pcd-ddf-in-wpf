@@ -39,7 +39,7 @@ namespace Koinzer.pcdddfinwpf.Model.GUI
 		
 		public String Name {
 			get {
-				return "Device image";
+				return "GUI.DeviceImage".Localize();
 			}
 		}
 		

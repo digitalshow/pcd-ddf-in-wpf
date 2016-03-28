@@ -50,7 +50,7 @@ namespace Koinzer.pcdddfinwpf.Writer
 				} else {
 					subsets = subsets.OrderBy(subset => (subset is Model.PCDChannelRange));
 					if (subsets.Count() > 1)
-						results.AddMessage("Feature '{0}' was applied more than once.", feature.ToString());
+						results.AddMessage("PCDFeatureWriter.FeatureAppliedMoreThanOnce".Localize(), feature.ToString());
 					if (subsets.First() is Model.PCDChannelItem && !(feature is Model.PCDDeviceFeatureRange)) {
 						value = ((Model.PCDChannelItem)subsets.First()).SetValue;
 					} else
@@ -60,7 +60,7 @@ namespace Koinzer.pcdddfinwpf.Writer
 					if (featEl.Attribute("ChannelName") == null) {
 						featEl.Add(new XAttribute("ChannelName", subsets.First().Parent.ChannelType));
 					} else if (featEl.Attribute("ChannelName").Value != subsets.First().Parent.ChannelType) {
-						results.AddMessage("Feature '{0}' can't be applied because another feature that should be on the same channel is on another one.", feature.ToString());
+						results.AddMessage("PCDFeatureWriter.DifferentChannels".Localize(), feature.ToString());
 						value = feature.InitValue;
 						maxValue = (feature is Model.PCDDeviceFeatureRange) ? ((Model.PCDDeviceFeatureRange)feature).InitMaxValue : 0;
 					}

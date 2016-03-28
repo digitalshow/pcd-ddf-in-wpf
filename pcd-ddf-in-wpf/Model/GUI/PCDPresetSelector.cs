@@ -48,7 +48,7 @@ namespace Koinzer.pcdddfinwpf.Model.GUI
 		
 		public String Name {
 			get {
-				return "Preset Selector";
+				return "GUI.PresetSelector".Localize();
 			}
 		}
 	}

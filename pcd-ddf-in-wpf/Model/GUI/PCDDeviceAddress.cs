@@ -44,7 +44,7 @@ namespace Koinzer.pcdddfinwpf.Model.GUI
 		
 		public String Name {
 			get {
-				return "Device address";
+				return "GUI.DeviceAddress".Localize();
 			}
 		}
 		

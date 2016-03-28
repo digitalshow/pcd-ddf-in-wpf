@@ -35,54 +35,54 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 				<Button Command="{Binding AddColorPicker, Source={StaticResource guiCmd}}" CommandParameter="{Binding}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/ui-color-picker.png" />
-						<TextBlock Text="Add Colorpicker" />
+						<TextBlock Text="{self:Loc GUIEditor.AddColorpicker}" />
 					</StackPanel>
 				</Button>
 				<Button Command="{Binding AddDropdown, Source={StaticResource guiCmd}}" CommandParameter="{Binding}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/ui-combo-box.png" />
-						<TextBlock Text="Add Dropdown" />
+						<TextBlock Text="{self:Loc GUIEditor.AddDropdown}" />
 					</StackPanel>
 				</Button>
 				<Button Command="{Binding AddPosition, Source={StaticResource guiCmd}}" CommandParameter="{Binding}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/arrow-move.png" />
-						<TextBlock Text="Add Position" />
+						<TextBlock Text="{self:Loc GUIEditor.AddPosition}" />
 					</StackPanel>
 				</Button>
 				<Button Command="{Binding AddSlider, Source={StaticResource guiCmd}}" CommandParameter="{Binding}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/ui-slider.png" />
-						<TextBlock Text="Add Slider" />
+						<TextBlock Text="{self:Loc GUIEditor.AddSlider}" />
 					</StackPanel>
 				</Button>
 				<Button Command="{Binding AddLabel, Source={StaticResource guiCmd}}" CommandParameter="{Binding}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/ui-label.png" />
-						<TextBlock Text="Add Label" />
+						<TextBlock Text="{self:Loc GUIEditor.AddLabel}" />
 					</StackPanel>
 				</Button>
 				<Button Command="{Binding AddButton, Source={StaticResource guiCmd}}" CommandParameter="{Binding}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/ui-button.png" />
-						<TextBlock Text="Add Button" />
+						<TextBlock Text="{self:Loc GUIEditor.AddButton}" />
 					</StackPanel>
 				</Button>
 				<Separator />
 				<Button Command="{Binding Remove, Source={StaticResource objCmd}}" CommandParameter="{Binding SelectedItem, ElementName=list}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/cross.png" />
-						<TextBlock Text="Remove" />
+						<TextBlock Text="{self:Loc Remove}" />
 					</StackPanel>
 				</Button>
 				<Separator />
-				<Button Content="Add Preset Selector" Command="{Binding AddPresetSelector, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
-				<Button Content="Add Fadetime Edit" Command="{Binding AddFadetimeEdit, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
-				<Button Content="Add Fadetime Checkbox" Command="{Binding AddFadetimeCheckbox, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
-				<Button Content="Add Device Address" Command="{Binding AddDeviceAddress, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
-				<Button Content="Add Device Dipswitch" Command="{Binding AddDeviceDipswitch, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
-				<Button Content="Add Device Image" Command="{Binding AddDeviceImage, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
-				<Button Content="Add Device Name" Command="{Binding AddDeviceName, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
+				<Button Content="{self:Loc GUIEditor.AddPresetSelector}" Command="{Binding AddPresetSelector, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
+				<Button Content="{self:Loc GUIEditor.AddFadetimeEdit}" Command="{Binding AddFadetimeEdit, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
+				<Button Content="{self:Loc GUIEditor.AddFadetimeCheckbox}" Command="{Binding AddFadetimeCheckbox, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
+				<Button Content="{self:Loc GUIEditor.AddDeviceAddress}" Command="{Binding AddDeviceAddress, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
+				<Button Content="{self:Loc GUIEditor.AddDeviceDipswitch}" Command="{Binding AddDeviceDipswitch, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
+				<Button Content="{self:Loc GUIEditor.AddDeviceImage}" Command="{Binding AddDeviceImage, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
+				<Button Content="{self:Loc GUIEditor.AddDeviceName}" Command="{Binding AddDeviceName, Source={StaticResource guiCmd}}" CommandParameter="{Binding}" />
 			</ToolBar>
 		</ToolBarPanel>
 		<Grid>
@@ -124,7 +124,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 							Width="{Binding Width}"
 							Height="{Binding Height}"
 							TextAlignment="Center"
-							Text="Device image"
+							Text="{self:Loc GUI.DeviceImage}"
 							TextWrapping="Wrap"
 							Background="AliceBlue"
 							PreviewMouseDown="ElementClicked"
@@ -132,7 +132,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 					</DataTemplate>
 					<DataTemplate DataType="{x:Type gui:PCDDeviceName}">
 						<TextBlock 
-							Text="Device name"
+							Text="{self:Loc GUI.DeviceName}"
 							TextWrapping="Wrap"
 							Background="AliceBlue"
 							PreviewMouseDown="ElementClicked"
@@ -140,7 +140,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 					</DataTemplate>
 					<DataTemplate DataType="{x:Type gui:PCDDeviceAddress}">
 						<TextBlock 
-							Text="Device address"
+							Text="{self:Loc GUI.DeviceAddress}"
 							TextWrapping="Wrap"
 							Background="AliceBlue"
 							PreviewMouseDown="ElementClicked"
@@ -150,7 +150,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 						<TextBlock 
 							Width="{Binding Width}"
 							Height="{Binding Height}"
-							Text="Dipswitch"
+							Text="{self:Loc GUI.Dipswitch}"
 							TextWrapping="Wrap"
 							TextAlignment="Center"
 							Background="PaleVioletRed"
@@ -271,7 +271,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 				</ListBox.ItemTemplate>
 			</ListBox>
 			<self:GUIPropertyEditor Grid.Row="1" Grid.Column="1" DataContext="{Binding SelectedItem, ElementName=list}" />
-			<GroupBox Header="Form" Grid.Row="2" Grid.Column="1">
+			<GroupBox Header="{self:Loc GUIEditor.Form}" Grid.Row="2" Grid.Column="1">
 				<Grid>
 					<Grid.RowDefinitions>
 						<RowDefinition Height="Auto" />
@@ -281,9 +281,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 						<ColumnDefinition Width="0.5*" />
 						<ColumnDefinition Width="0.5*" />
 					</Grid.ColumnDefinitions>
-				<TextBlock Grid.Row="0" Grid.Column="0" Text="Width" />
+				<TextBlock Grid.Row="0" Grid.Column="0" Text="{self:Loc Width}" />
 				<ctrls:IntegerUpDown Grid.Row="0" Grid.Column="1" Minimum="0" Value="{Binding FormWidth}" />
-				<TextBlock Grid.Row="1" Grid.Column="0" Text="Height" />
+				<TextBlock Grid.Row="1" Grid.Column="0" Text="{self:Loc Height}" />
 				<ctrls:IntegerUpDown Grid.Row="1" Grid.Column="1" Minimum="0" Value="{Binding FormHeight}" />
 				</Grid>
 			</GroupBox>

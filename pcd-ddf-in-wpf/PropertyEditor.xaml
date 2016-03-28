@@ -30,7 +30,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			<ContentControl.Resources>
 				<DataTemplate DataType="{x:Type model:PCDDeviceChannel}">
 					<StackPanel>
-						<GroupBox Header="Channel">
+						<GroupBox Header="{self:Loc Channel}">
 							<Grid>
 								<Grid.RowDefinitions>
 									<RowDefinition Height="Auto" />
@@ -45,26 +45,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 									<ColumnDefinition Width="0.5*" />
 									<ColumnDefinition Width="0.5*" />
 								</Grid.ColumnDefinitions>
-								<TextBlock Grid.Row="0" Grid.Column="0" Text="Channel" />
+								<TextBlock Grid.Row="0" Grid.Column="0" Text="{self:Loc Channel}" />
 								<TextBox Grid.Row="0" Grid.Column="1" IsReadOnly="True" Text="{Binding Channel, UpdateSourceTrigger=PropertyChanged}" />
-								<TextBlock Grid.Row="2" Grid.Column="0" Text="Channel type" />
+								<TextBlock Grid.Row="2" Grid.Column="0" Text="{self:Loc ChannelType}" />
 								<ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding ChannelTypes, Source={StaticResource ct}}" IsEditable="True" Text="{Binding ChannelType}" />
-								<TextBlock Grid.Row="1" Grid.Column="0" Text="Name" />
+								<TextBlock Grid.Row="1" Grid.Column="0" Text="{self:Loc Name}" />
 								<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
-								<TextBlock Grid.Row="3" Grid.Column="0" Text="Min" />
+								<TextBlock Grid.Row="3" Grid.Column="0" Text="{self:Loc Min}" />
 								<ctrls:IntegerUpDown Grid.Row="3" Grid.Column="1" Minimum="0" Maximum="{Binding MaxValue}" Value="{Binding MinValue}" />
-								<TextBlock Grid.Row="4" Grid.Column="0" Text="Max" />
+								<TextBlock Grid.Row="4" Grid.Column="0" Text="{self:Loc Max}" />
 								<ctrls:IntegerUpDown Grid.Row="4" Grid.Column="1" Minimum="{Binding MinValue}" Maximum="255" Value="{Binding MaxValue}" />
-								<TextBlock Grid.Row="5" Grid.Column="0" Text="Init Value" />
+								<TextBlock Grid.Row="5" Grid.Column="0" Text="{self:Loc InitValue}" />
 								<ctrls:IntegerUpDown Grid.Row="5" Grid.Column="1" Minimum="{Binding MinValue}" Maximum="{Binding MaxValue}" Value="{Binding InitValue}" />
-								<CheckBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="{Binding Fade}" Content="Fade" />
+								<CheckBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="{Binding Fade}" Content="{self:Loc Fade}" />
 							</Grid>
 						</GroupBox>
 					</StackPanel>
 				</DataTemplate>
 				<DataTemplate DataType="{x:Type model:PCDChannelItem}">
 					<StackPanel>
-						<GroupBox Header="Item">
+						<GroupBox Header="{self:Loc Item}">
 							<Grid>
 								<Grid.RowDefinitions>
 									<RowDefinition Height="Auto" />
@@ -80,19 +80,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 									<ColumnDefinition Width="0.5*" />
 									<ColumnDefinition Width="0.5*" />
 								</Grid.ColumnDefinitions>
-								<TextBlock Grid.Row="0" Grid.Column="0" Text="Name" />
+								<TextBlock Grid.Row="0" Grid.Column="0" Text="{self:Loc Name}" />
 								<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
-								<TextBlock Grid.Row="1" Grid.Column="0" Text="Min" />
+								<TextBlock Grid.Row="1" Grid.Column="0" Text="{self:Loc Min}" />
 								<ctrls:IntegerUpDown Grid.Row="1" Grid.Column="1" Minimum="{Binding Parent.MinValue}" Maximum="{Binding MaxValue}" Value="{Binding MinValue}" />
-								<TextBlock Grid.Row="2" Grid.Column="0" Text="Max" />
+								<TextBlock Grid.Row="2" Grid.Column="0" Text="{self:Loc Max}" />
 								<ctrls:IntegerUpDown Grid.Row="2" Grid.Column="1" Minimum="{Binding MinValue}" Maximum="{Binding Parent.MaxValue}" Value="{Binding MaxValue}" />
-								<TextBlock Grid.Row="3" Grid.Column="0" Text="Set Value" />
+								<TextBlock Grid.Row="3" Grid.Column="0" Text="{self:Loc SetValue}" />
 								<ctrls:IntegerUpDown Grid.Row="3" Grid.Column="1" Minimum="{Binding MinValue}" Maximum="{Binding MaxValue}" Value="{Binding SetValue}" />
-								<TextBlock Grid.Row="4" Grid.Column="0" Text="Icon" />
+								<TextBlock Grid.Row="4" Grid.Column="0" Text="{self:Loc Icon}" />
 								<self:RelativeFileTextBox Grid.Row="4" Grid.Column="1" RelativeFolder="\Devicepictures\Gobos" FileName="{Binding IconFileName}" />
-								<TextBlock Grid.Row="5" Grid.Column="0" Text="Color" />
+								<TextBlock Grid.Row="5" Grid.Column="0" Text="{self:Loc Color}" />
 								<ctrls:ColorPicker Grid.Row="5" Grid.Column="1" SelectedColor="{Binding Color}" />
-								<CheckBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="{Binding JoinNext}" Content="Join with next item" />
+								<CheckBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="{Binding JoinNext}" Content="{self:Loc PropertyEditor.Joinwithnextitem}" />
 								<ctrls:FeatureSelector Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Subset="{Binding}" />
 							</Grid>
 						</GroupBox>
@@ -100,7 +100,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 				</DataTemplate>
 				<DataTemplate DataType="{x:Type model:PCDChannelRange}">
 					<StackPanel>
-						<GroupBox Header="Range">
+						<GroupBox Header="{self:Loc Range}">
 							<Grid>
 								<Grid.RowDefinitions>
 									<RowDefinition Height="Auto" />
@@ -114,15 +114,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 									<ColumnDefinition Width="0.5*" />
 									<ColumnDefinition Width="0.5*" />
 								</Grid.ColumnDefinitions>
-								<TextBlock Grid.Row="0" Grid.Column="0" Text="Name" />
+								<TextBlock Grid.Row="0" Grid.Column="0" Text="{self:Loc Name}" />
 								<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
-								<TextBlock Grid.Row="1" Grid.Column="0" Text="Min" />
+								<TextBlock Grid.Row="1" Grid.Column="0" Text="{self:Loc Min}" />
 								<ctrls:IntegerUpDown Grid.Row="1" Grid.Column="1" Minimum="{Binding Parent.MinValue}" Maximum="{Binding MaxValue}" Value="{Binding MinValue}" />
-								<TextBlock Grid.Row="2" Grid.Column="0" Text="Max" />
+								<TextBlock Grid.Row="2" Grid.Column="0" Text="{self:Loc Max}" />
 								<ctrls:IntegerUpDown Grid.Row="2" Grid.Column="1" Minimum="{Binding MinValue}" Maximum="{Binding Parent.MaxValue}" Value="{Binding MaxValue}" />
-								<TextBlock Grid.Row="3" Grid.Column="0" Text="Color" />
+								<TextBlock Grid.Row="3" Grid.Column="0" Text="{self:Loc Color}" />
 								<ctrls:ColorPicker Grid.Row="3" Grid.Column="1" SelectedColor="{Binding Color}" />
-								<CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="{Binding JoinNext}" Content="Join with next item" />
+								<CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" IsChecked="{Binding JoinNext}" Content="{self:Loc PropertyEditor.Joinwithnextitem}" />
 								<ctrls:FeatureSelector Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Subset="{Binding}" />
 							</Grid>
 						</GroupBox>

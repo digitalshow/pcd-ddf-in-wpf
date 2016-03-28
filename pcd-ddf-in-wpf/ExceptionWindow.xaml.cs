@@ -19,29 +19,38 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
 
-namespace Koinzer.pcdddfinwpf.Model.GUI
+namespace Koinzer.pcdddfinwpf
 {
 	/// <summary>
-	/// Description of PCDPosition.
+	/// Interaction logic for ExceptionWindow.xaml
 	/// </summary>
-	public class PCDPosition: PCDDeviceElement
+	public partial class ExceptionWindow : Window
 	{
-		public PCDPosition(PCDDevice device): base(device)
+		public ExceptionWindow()
 		{
-			Width = 215;
-			Height = 215;
+			InitializeComponent();
 		}
 		
-		public override string GetNodeName()
+		public static void ShowException(Exception ex)
 		{
-			return "position";
+			ExceptionWindow wdw = new ExceptionWindow();
+			wdw.message.Text = ex.Message;
+			wdw.exceptionText.Text = ex.ToString();
+			wdw.ShowDialog();
 		}
 		
-		public String Name {
-			get {
-				return "GUI.Position".Localize();
-			}
+		void Button_Click(object sender, RoutedEventArgs e)
+		{
+			this.Close();
 		}
 	}
 }

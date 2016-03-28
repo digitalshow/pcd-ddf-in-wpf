@@ -1,4 +1,4 @@
-﻿<!-- 
+<!-- 
 pcd-ddf-in-wpf: A DDF editor for PC_DIMMER, an open source light 
 control software.
 Copyright (C) 2016 Ingo Koinzer
@@ -34,40 +34,40 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 				<Button Command="{Binding New}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/document.png" />
-						<TextBlock Text="New" />
+						<TextBlock Text="{self:Loc New}" />
 					</StackPanel>
 				</Button>
 				<Button Command="{Binding LoadFromFile}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/folder-horizontal-open.png" />
-						<TextBlock Text="Open" />
+						<TextBlock Text="{self:Loc Open}" />
 					</StackPanel>
 				</Button>
 				<Button Command="{Binding SaveToFile}" IsEnabled="{Binding ChangesTracker.Changed}">
 					<StackPanel Orientation="Horizontal">
 						<Image Margin="0,0,2,0" Width="16" Height="16" Source="Icons/disk.png" />
-						<TextBlock Text="Save" />
+						<TextBlock Text="{self:Loc Save}" />
 					</StackPanel>
 				</Button>
 			</ToolBar>
 		</ToolBarPanel>
 		<TabControl>
-			<TabItem Header="Device">
+			<TabItem Header="{self:Loc Device}">
 				<self:DeviceEditor DataContext="{Binding CurrentDevice}" />
 			</TabItem>
-			<TabItem Header="Amber">
+			<TabItem Header="{self:Loc Amber}">
 				<self:DeviceAmberEditor DataContext="{Binding CurrentDevice.Amber}" />
 			</TabItem>
-			<TabItem Header="Channels">
+			<TabItem Header="{self:Loc Channels}">
 				<self:ChannelEditor DataContext="{Binding CurrentDevice}" />
 			</TabItem>
-			<TabItem Header="Presets">
+			<TabItem Header="{self:Loc Presets}">
 				<self:PresetEditor DataContext="{Binding CurrentDevice}" />
 			</TabItem>
-			<TabItem Header="GUI">
+			<TabItem Header="{self:Loc GUI}">
 				<self:GUIEditor DataContext="{Binding CurrentDevice}" />
 			</TabItem>
-			<TabItem Header="About">
+			<TabItem Header="{self:Loc About}">
 				<self:AboutBox />
 			</TabItem>
 		</TabControl>

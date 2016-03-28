@@ -53,7 +53,7 @@ namespace Koinzer.pcdddfinwpf.Model.GUI
 		
 		public String Name {
 			get {
-				return "Fadetime edit";
+				return "GUI.FadetimeEdit".Localize();
 			}
 		}
 	}

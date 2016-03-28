@@ -34,7 +34,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		<TextBlock Grid.Row="0" Grid.Column="1" FontWeight="Bold" FontSize="16" Text="PCD DDF in WPF - PC_DIMMER DDF Editor" />
 		<TextBlock Grid.Row="1" Grid.Column="1" Text="Copyright (C) 2016 Ingo Koinzer" Name="authorInfo" />
 		<TabControl  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
-			<TabItem Header="Libraries">
+			<TabItem Header="{self:Loc AboutBox.Libraries}">
 				<StackPanel>
 					<TextBlock xml:space="preserve"><Bold>Prism MVVM by .NET Foundation</Bold> <Hyperlink NavigateUri="https://github.com/PrismLibrary/Prism" RequestNavigate="DoRequestNavigate">https://github.com/PrismLibrary/Prism</Hyperlink></TextBlock>
 					<TextBlock xml:space="preserve">Licensed under Apache License 2.0 <Hyperlink NavigateUri="http://www.apache.org/licenses/LICENSE-2.0" RequestNavigate="DoRequestNavigate">http://www.apache.org/licenses/LICENSE-2.0</Hyperlink></TextBlock>
@@ -43,8 +43,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 					<TextBlock xml:space="preserve">The icons are licensed under a Creative Commons Attribution 3.0 license. <Hyperlink NavigateUri="http://creativecommons.org/licenses/by/3.0/" RequestNavigate="DoRequestNavigate">http://creativecommons.org/licenses/by/3.0/</Hyperlink></TextBlock>
 				</StackPanel>
 			</TabItem>
-			<TabItem Header="License">
+			<TabItem Header="{self:Loc AboutBox.License}">
 				<TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static self:AboutBox.GPLv3}" VerticalScrollBarVisibility="Visible" />
+			</TabItem>
+			<TabItem Header="{self:Loc AboutBox.ContributingHeader}">
+				<StackPanel>
+					<TextBlock xml:space="preserve"><Bold><self:LocExtension Key="AboutBox.ReportingErrors" /></Bold></TextBlock>
+					<TextBlock xml:space="preserve"><self:LocExtension Key="AboutBox.PleaseReportAnyIssuesOnThe" /> <Hyperlink NavigateUri="https://github.com/digitalshow/pcd-ddf-in-wpf/issues" RequestNavigate="DoRequestNavigate"><self:LocExtension Key="AboutBox.GitHubIssuesPage" /></Hyperlink>.</TextBlock>
+					<TextBlock xml:space="preserve" Margin="0,5,0,0"><Bold><self:LocExtension Key="AboutBox.Contributing" /></Bold></TextBlock>
+					<TextBlock xml:space="preserve"><self:LocExtension Key="AboutBox.ForkMeOn" /> <Hyperlink NavigateUri="https://github.com/digitalshow/pcd-ddf-in-wpf" RequestNavigate="DoRequestNavigate"><self:LocExtension Key="AboutBox.GitHub" /></Hyperlink>!</TextBlock>
+					<TextBlock xml:space="preserve" Margin="0,5,0,0"><Bold><self:LocExtension Key="AboutBox.Translating" /></Bold></TextBlock>
+					<TextBlock xml:space="preserve"><self:LocExtension Key="AboutBox.TranslatingText" /></TextBlock>
+				</StackPanel>
 			</TabItem>
 		</TabControl>
 	</Grid>

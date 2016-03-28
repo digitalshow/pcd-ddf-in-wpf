@@ -43,7 +43,7 @@ namespace Koinzer.pcdddfinwpf
 		void Button_Click(object sender, RoutedEventArgs e)
 		{
 			Microsoft.Win32.OpenFileDialog ofd = new Microsoft.Win32.OpenFileDialog();
-			ofd.Filter = "Png image (*.png)|*.png|All files (*.*)|*.*";
+			ofd.Filter = "PngImage".Localize()+" (*.png)|*.png|"+"AllFiles".Localize()+" (*.*)|*.*";
 			String folder = PCDInstallationFinder.Instance.InstallationDirectory + RelativeFolder;
 			ofd.InitialDirectory = folder;
 			if (ofd.ShowDialog().GetValueOrDefault() == true) {

@@ -39,6 +39,7 @@ namespace Koinzer.pcdddfinwpf
 	{
 		public MainWindow()
 		{
+			Strings.Culture = System.Globalization.CultureInfo.CurrentCulture;
 			InitializeComponent();
 			this.DataContext = Workspace.Instance;
 			this.Closing += MainWindow_Closing;

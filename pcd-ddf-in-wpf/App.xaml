@@ -19,7 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <Application x:Class="Koinzer.pcdddfinwpf.App"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	StartupUri="MainWindow.xaml">
+	StartupUri="MainWindow.xaml"
+	DispatcherUnhandledException="Application_DispatcherUnhandledException">
 	<Application.Resources>
 		 
 	</Application.Resources>

@@ -19,29 +19,30 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 using System;
+using System.Windows.Markup;
 
-namespace Koinzer.pcdddfinwpf.Model.GUI
+namespace Koinzer.pcdddfinwpf
 {
 	/// <summary>
-	/// Description of PCDPosition.
+	/// Description of LocExtension.
 	/// </summary>
-	public class PCDPosition: PCDDeviceElement
+	public class LocExtension: MarkupExtension
 	{
-		public PCDPosition(PCDDevice device): base(device)
+		public LocExtension()
 		{
-			Width = 215;
-			Height = 215;
+			
 		}
 		
-		public override string GetNodeName()
+		public LocExtension(String key): base()
 		{
-			return "position";
+			Key = key;
 		}
 		
-		public String Name {
-			get {
-				return "GUI.Position".Localize();
-			}
+		public override object ProvideValue(IServiceProvider serviceProvider)
+		{
+			return Key.Localize();
 		}
+		
+		public String Key { get; set; }
 	}
 }
