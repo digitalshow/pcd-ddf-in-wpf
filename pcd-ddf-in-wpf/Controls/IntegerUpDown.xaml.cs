@@ -43,19 +43,19 @@ namespace Koinzer.pcdddfinwpf.Controls
 		void TextBox_MouseWheel(object sender, MouseWheelEventArgs e)
 		{
 			int delta = (Keyboard.Modifiers.HasFlag(ModifierKeys.Shift)) ? 10 : 1;
-			Value += (e.Delta > 0) ? delta : -delta;
+			InternalValue += (e.Delta > 0) ? delta : -delta;
 		}
 		
 		void Button_Click(object sender, RoutedEventArgs e)
 		{
 			int delta = (Keyboard.Modifiers.HasFlag(ModifierKeys.Shift)) ? 10 : 1;
-			Value += delta;
+			InternalValue += delta;
 		}
 		
 		void Button_Click1(object sender, RoutedEventArgs e)
 		{
 			int delta = (Keyboard.Modifiers.HasFlag(ModifierKeys.Shift)) ? 10 : 1;
-			Value -= delta;
+			InternalValue -= delta;
 		}
 		
 		void UpdateButtonIsEnabled()
@@ -64,15 +64,32 @@ namespace Koinzer.pcdddfinwpf.Controls
 			downBtn.IsEnabled = Minimum < Value;
 		}
 		
+		bool externalUpdate = false;
+		
 		static void ValueChanged(Object sender, DependencyPropertyChangedEventArgs e)
 		{
 			IntegerUpDown obj = sender as IntegerUpDown;
-			if (sender == null)
+			if (obj == null)
+				return;
+			if (obj.InternalValue == (int)e.NewValue)
+				return;
+			obj.externalUpdate = true;
+			obj.InternalValue = (int)e.NewValue;
+			obj.externalUpdate = false;
+		}
+		
+		static void InternalValueChanged(Object sender, DependencyPropertyChangedEventArgs e)
+		{
+			IntegerUpDown obj = sender as IntegerUpDown;
+			if (obj == null)
+				return;
+			if (obj.externalUpdate)
 				return;
 			if ((int)e.NewValue > obj.Maximum)
-				obj.Value = obj.Maximum;
+				obj.InternalValue = obj.Maximum;
 			if ((int)e.NewValue < obj.Minimum)
-				obj.Value = obj.Minimum;
+				obj.InternalValue = obj.Minimum;
+			obj.Value = obj.InternalValue;
 			obj.UpdateButtonIsEnabled();
 		}
 		
@@ -88,11 +105,11 @@ namespace Koinzer.pcdddfinwpf.Controls
 		{
 			int delta = e.KeyboardDevice.Modifiers.HasFlag(ModifierKeys.Shift) ? 10 : 1;
 			if (e.Key == Key.Down) {
-				Value -= delta;
+				InternalValue -= delta;
 				e.Handled = true;
 			}
 			if (e.Key == Key.Up) {
-				Value += delta;
+				InternalValue += delta;
 				e.Handled = true;
 			}
 		}
@@ -104,12 +121,17 @@ namespace Koinzer.pcdddfinwpf.Controls
 		public int Value {
 			get { return (int)GetValue(ValueProperty); }
 			set {
-				if (value < Minimum)
-					value = Minimum;
-				if (value > Maximum)
-					value = Maximum;
 				SetValue(ValueProperty, value); 
 			}
+		}
+		
+		private static readonly DependencyProperty InternalValueProperty =
+			DependencyProperty.Register("InternalValue", typeof(int), typeof(IntegerUpDown),
+			                            new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, InternalValueChanged));
+		
+		private int InternalValue {
+			get { return (int)GetValue(InternalValueProperty); }
+			set { SetValue(InternalValueProperty, value); }
 		}
 		
 		public static readonly DependencyProperty MinimumProperty =

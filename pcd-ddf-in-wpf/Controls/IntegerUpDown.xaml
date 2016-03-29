@@ -55,7 +55,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*" />
 		</Grid.ColumnDefinitions>
-		<TextBox Grid.Row="0" Grid.RowSpan="2" Padding="0,0,18,0" TextAlignment="Right" Text="{Binding Value, ElementName=uc, UpdateSourceTrigger=PropertyChanged}" Name="textbox" MouseWheel="TextBox_MouseWheel" PreviewKeyDown="Textbox_PreviewKeyDown" />
+		<TextBox Grid.Row="0" Grid.RowSpan="2" Padding="0,0,18,0" TextAlignment="Right" Text="{Binding InternalValue, ElementName=uc, UpdateSourceTrigger=PropertyChanged}" Name="textbox" MouseWheel="TextBox_MouseWheel" PreviewKeyDown="Textbox_PreviewKeyDown" />
 		<RepeatButton Grid.Row="0" Style="{StaticResource upDownBtn}" Name="upBtn" Click="Button_Click">
 			<Path Stroke="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=RepeatButton}}" StrokeThickness="1" Data="M 0,3 3,0 6,3" />
 		</RepeatButton>
