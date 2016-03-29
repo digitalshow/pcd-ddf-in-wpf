@@ -58,8 +58,10 @@ namespace Koinzer.pcdddfinwpf.Parser
 					subset.Name = feature.FeatureItemName;
 					subset.Features.Add(feature);
 					subset.MinValue = featureValue;
-					subset.MaxValue = int.Parse(node.Attributes[rangeFeature.XmlAttributeMaxName].Value);
 					if (node.Attributes[rangeFeature.XmlAttributeMaxName] == null)
+						continue;
+					subset.MaxValue = int.Parse(node.Attributes[rangeFeature.XmlAttributeMaxName].Value);
+					if (featureValue > int.Parse(node.Attributes[rangeFeature.XmlAttributeMaxName].Value))
 						continue;
 					
 					// Bestehendes überschneidendes Subset suchen

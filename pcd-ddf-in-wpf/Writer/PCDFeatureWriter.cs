@@ -36,6 +36,7 @@ namespace Koinzer.pcdddfinwpf.Writer
 		
 		public void Write(XElement devEl, Model.PCDDevice device, WriteResults results)
 		{
+			List<Model.PCDDeviceFeature> unusedFeatures = new List<Koinzer.pcdddfinwpf.Model.PCDDeviceFeature>();
 			foreach (Model.PCDDeviceFeature feature in Model.PCDDeviceFeatures.Instance.Features) {
 				if (String.IsNullOrEmpty(feature.XmlNodeName)) // "None"
 					continue;
@@ -46,7 +47,8 @@ namespace Koinzer.pcdddfinwpf.Writer
 				int maxValue = (feature is Model.PCDDeviceFeatureRange) ? ((Model.PCDDeviceFeatureRange)feature).InitMaxValue : 0;
 				IEnumerable<Model.PCDChannelSubset> subsets = device.Channels.SelectMany(ch => ch.Subsets.Where(subset => subset.Features.Contains(feature)));
 				if (subsets.Count() == 0) {
-					value = feature.InitValue;
+					unusedFeatures.Add(feature);
+					continue;
 				} else {
 					subsets = subsets.OrderBy(subset => (subset is Model.PCDChannelRange));
 					if (subsets.Count() > 1)
@@ -68,6 +70,18 @@ namespace Koinzer.pcdddfinwpf.Writer
 				featEl.Add(new XAttribute(feature.XmlAttributeName, value));
 				if (feature is Model.PCDDeviceFeatureRange)
 					featEl.Add(new XAttribute(((Model.PCDDeviceFeatureRange)feature).XmlAttributeMaxName, maxValue));
+			}
+			foreach (Model.PCDDeviceFeature feature in unusedFeatures) {
+				XElement featEl = devEl.Element(feature.XmlNodeName);
+				if (featEl == null)
+					devEl.Add(featEl = new XElement(feature.XmlNodeName));
+				if (featEl.Attribute(feature.XmlAttributeName) != null)
+					continue;
+				featEl.Add(new XAttribute(feature.XmlAttributeName, feature.InitValue));
+				if (feature is Model.PCDDeviceFeatureRange)
+					featEl.Add(new XAttribute(
+						((Model.PCDDeviceFeatureRange)feature).XmlAttributeMaxName, 
+						((Model.PCDDeviceFeatureRange)feature).InitMaxValue));
 			}
 		}
 	}

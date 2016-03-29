@@ -47,14 +47,20 @@ namespace Koinzer.pcdddfinwpf.Model
 			_features.Add(new PCDDeviceFeature("Gobo 1 Rotation".Localize(), "Off".Localize(), "gobo1rot", "OffValue", 128));
 			_features.Add(new PCDDeviceFeatureRange("Gobo 1 Rotation".Localize(), "Range Left Min-Max".Localize(), "gobo1rot", "LeftMinValue", "LeftMaxValue", 0, 127));
 			_features.Add(new PCDDeviceFeatureRange("Gobo 1 Rotation".Localize(), "Range Right Min-Max".Localize(), "gobo1rot", "RightMinValue", "RightMaxValue", 129, 255));
+			_features.Add(new PCDDeviceFeatureRange("Gobo 1 Rotation".Localize(), "Range Left Max-Min".Localize(), "gobo1rot", "LeftMaxValue", "LeftMinValue", 0, 127));
+			_features.Add(new PCDDeviceFeatureRange("Gobo 1 Rotation".Localize(), "Range Right Max-Min".Localize(), "gobo1rot", "RightMaxValue", "RightMinValue", 129, 255));
 			
 			_features.Add(new PCDDeviceFeature("Gobo 2 Rotation".Localize(), "Off".Localize(), "gobo2rot", "OffValue", 128));
 			_features.Add(new PCDDeviceFeatureRange("Gobo 2 Rotation".Localize(), "Range Left Min-Max".Localize(), "gobo2rot", "LeftMinValue", "LeftMaxValue", 0, 127));
 			_features.Add(new PCDDeviceFeatureRange("Gobo 2 Rotation".Localize(), "Range Right Min-Max".Localize(), "gobo2rot", "RightMinValue", "RightMaxValue", 129, 255));
+			_features.Add(new PCDDeviceFeatureRange("Gobo 2 Rotation".Localize(), "Range Left Max-Min".Localize(), "gobo2rot", "LeftMaxValue", "LeftMinValue", 0, 127));
+			_features.Add(new PCDDeviceFeatureRange("Gobo 2 Rotation".Localize(), "Range Right Max-Min".Localize(), "gobo2rot", "RightMaxValue", "RightMinValue", 129, 255));
 			
 			_features.Add(new PCDDeviceFeature("Prisma Rotation".Localize(), "Off".Localize(), "prismarot", "OffValue", 128));
 			_features.Add(new PCDDeviceFeatureRange("Prisma Rotation".Localize(), "Range Left Min-Max".Localize(), "prismarot", "LeftMinValue", "LeftMaxValue", 0, 127));
 			_features.Add(new PCDDeviceFeatureRange("Prisma Rotation".Localize(), "Range Right Min-Max".Localize(), "prismarot", "RightMinValue", "RightMaxValue", 129, 255));
+			_features.Add(new PCDDeviceFeatureRange("Prisma Rotation".Localize(), "Range Left Max-Min".Localize(), "prismarot", "LeftMaxValue", "LeftMinValue", 0, 127));
+			_features.Add(new PCDDeviceFeatureRange("Prisma Rotation".Localize(), "Range Right Max-Min".Localize(), "prismarot", "RightMaxValue", "RightMinValue", 129, 255));
 			_features.Add(new PCDDeviceFeature("Prisma".Localize(), "Single".Localize(), "prisma", "SingleValue", 0));
 			_features.Add(new PCDDeviceFeature("Prisma".Localize(), "Triple".Localize(), "prisma", "TripleValue", 100));
 			

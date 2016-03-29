@@ -543,4 +543,10 @@
   <data name="AboutBox.ReportingErrors" xml:space="preserve">
     <value>Fehler melden und Funktionen vorschlagen</value>
   </data>
+  <data name="Range Left Max-Min" xml:space="preserve">
+    <value>Bereich Links Max-Min</value>
+  </data>
+  <data name="Range Right Max-Min" xml:space="preserve">
+    <value>Bereich Rechts Max-Min</value>
+  </data>
 </root>
