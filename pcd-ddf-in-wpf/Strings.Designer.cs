@@ -61,15 +61,6 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to &lt;Not named&gt;.
-		/// </summary>
-		public static string _Not_named_ {
-			get {
-				return ResourceManager.GetString("<Not named>", resourceCulture);
-			}
-		}
-		
-		/// <summary>
 		///   Looks up a localized string similar to About.
 		/// </summary>
 		public static string About {
@@ -79,7 +70,106 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to AddChannel.
+		///   Looks up a localized string similar to Contributing.
+		/// </summary>
+		public static string AboutBox_Contributing {
+			get {
+				return ResourceManager.GetString("AboutBox.Contributing", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Contributing, reporting errors.
+		/// </summary>
+		public static string AboutBox_ContributingHeader {
+			get {
+				return ResourceManager.GetString("AboutBox.ContributingHeader", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Fork me on.
+		/// </summary>
+		public static string AboutBox_ForkMeOn {
+			get {
+				return ResourceManager.GetString("AboutBox.ForkMeOn", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to GitHub.
+		/// </summary>
+		public static string AboutBox_GitHub {
+			get {
+				return ResourceManager.GetString("AboutBox.GitHub", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to GitHub Issues Page.
+		/// </summary>
+		public static string AboutBox_GitHubIssuesPage {
+			get {
+				return ResourceManager.GetString("AboutBox.GitHubIssuesPage", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Libraries.
+		/// </summary>
+		public static string AboutBox_Libraries {
+			get {
+				return ResourceManager.GetString("AboutBox.Libraries", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to License.
+		/// </summary>
+		public static string AboutBox_License {
+			get {
+				return ResourceManager.GetString("AboutBox.License", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Please report any issues on the.
+		/// </summary>
+		public static string AboutBox_PleaseReportAnyIssuesOnThe {
+			get {
+				return ResourceManager.GetString("AboutBox.PleaseReportAnyIssuesOnThe", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Reporting errors and feature requests.
+		/// </summary>
+		public static string AboutBox_ReportingErrors {
+			get {
+				return ResourceManager.GetString("AboutBox.ReportingErrors", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Translating.
+		/// </summary>
+		public static string AboutBox_Translating {
+			get {
+				return ResourceManager.GetString("AboutBox.Translating", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to If you would like to translate this program to another language or correct any errors, contact me via email..
+		/// </summary>
+		public static string AboutBox_TranslatingText {
+			get {
+				return ResourceManager.GetString("AboutBox.TranslatingText", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Add Channel.
 		/// </summary>
 		public static string AddChannel {
 			get {
@@ -88,7 +178,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to AddItem.
+		///   Looks up a localized string similar to Add Item.
 		/// </summary>
 		public static string AddItem {
 			get {
@@ -97,7 +187,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to AddRange.
+		///   Looks up a localized string similar to Add Range.
 		/// </summary>
 		public static string AddRange {
 			get {
@@ -106,7 +196,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to AllFiles.
+		///   Looks up a localized string similar to All Files.
 		/// </summary>
 		public static string AllFiles {
 			get {
@@ -160,7 +250,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to ChannelType.
+		///   Looks up a localized string similar to Channel type.
 		/// </summary>
 		public static string ChannelType {
 			get {
@@ -214,7 +304,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to DeviceAmberEditor.AmberGFactor.
+		///   Looks up a localized string similar to Amber factor green.
 		/// </summary>
 		public static string DeviceAmberEditor_AmberGFactor {
 			get {
@@ -223,7 +313,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to DeviceAmberEditor.AmberRFactor.
+		///   Looks up a localized string similar to Amber factor red.
 		/// </summary>
 		public static string DeviceAmberEditor_AmberRFactor {
 			get {
@@ -232,7 +322,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to DeviceAmberEditor.CompensateB.
+		///   Looks up a localized string similar to Compensate blue.
 		/// </summary>
 		public static string DeviceAmberEditor_CompensateB {
 			get {
@@ -241,7 +331,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to DeviceAmberEditor.CompensateRG.
+		///   Looks up a localized string similar to Compensate red/green.
 		/// </summary>
 		public static string DeviceAmberEditor_CompensateRG {
 			get {
@@ -250,7 +340,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to DeviceAmberEditor.UseAmbermixing.
+		///   Looks up a localized string similar to Use amber mixing.
 		/// </summary>
 		public static string DeviceAmberEditor_UseAmbermixing {
 			get {
@@ -286,7 +376,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to ExceptionWindow.ExceptionTextHeader.
+		///   Looks up a localized string similar to Error information.
 		/// </summary>
 		public static string ExceptionWindow_ExceptionTextHeader {
 			get {
@@ -295,7 +385,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to ExceptionWindow.Message.
+		///   Looks up a localized string similar to A program error occurred. Please report errors to the developer, you can copy the text below. More information on the &quot;About&quot; page..
 		/// </summary>
 		public static string ExceptionWindow_Message {
 			get {
@@ -304,7 +394,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to ExceptionWindow.MessageHeader.
+		///   Looks up a localized string similar to Application error.
 		/// </summary>
 		public static string ExceptionWindow_MessageHeader {
 			get {
@@ -322,7 +412,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to FadeTimeMs.
+		///   Looks up a localized string similar to Fade time [ms].
 		/// </summary>
 		public static string FadeTimeMs {
 			get {
@@ -340,7 +430,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to This feature is not a range and can only be applied to items..
+		///   Looks up a localized string similar to This feature is not a range feature and can only be applied to items..
 		/// </summary>
 		public static string FeatureSelector_FeatureRangeErrorText {
 			get {
@@ -358,7 +448,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to FileCouldNotBeLoaded.
+		///   Looks up a localized string similar to File could not be loaded..
 		/// </summary>
 		public static string FileCouldNotBeLoaded {
 			get {
@@ -367,7 +457,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to FileCouldNotBeSaved.
+		///   Looks up a localized string similar to File could not be saved..
 		/// </summary>
 		public static string FileCouldNotBeSaved {
 			get {
@@ -403,7 +493,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUI.Colorpicker.
+		///   Looks up a localized string similar to Colorpicker.
 		/// </summary>
 		public static string GUI_Colorpicker {
 			get {
@@ -412,7 +502,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUI.DeviceAddress.
+		///   Looks up a localized string similar to Device address.
 		/// </summary>
 		public static string GUI_DeviceAddress {
 			get {
@@ -421,7 +511,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUI.DeviceImage.
+		///   Looks up a localized string similar to Device image.
 		/// </summary>
 		public static string GUI_DeviceImage {
 			get {
@@ -430,7 +520,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUI.DeviceName.
+		///   Looks up a localized string similar to Device name.
 		/// </summary>
 		public static string GUI_DeviceName {
 			get {
@@ -439,7 +529,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUI.Dipswitch.
+		///   Looks up a localized string similar to Dipswitch.
 		/// </summary>
 		public static string GUI_Dipswitch {
 			get {
@@ -448,7 +538,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUI.FadetimeCheckbox.
+		///   Looks up a localized string similar to Fadetime checkbox.
 		/// </summary>
 		public static string GUI_FadetimeCheckbox {
 			get {
@@ -457,7 +547,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUI.FadetimeEdit.
+		///   Looks up a localized string similar to Fadetime edit.
 		/// </summary>
 		public static string GUI_FadetimeEdit {
 			get {
@@ -466,7 +556,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUI.Position.
+		///   Looks up a localized string similar to Position.
 		/// </summary>
 		public static string GUI_Position {
 			get {
@@ -475,7 +565,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUI.PresetSelector.
+		///   Looks up a localized string similar to Preset selector.
 		/// </summary>
 		public static string GUI_PresetSelector {
 			get {
@@ -484,7 +574,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUIEditor.AddButton.
+		///   Looks up a localized string similar to Add Button.
 		/// </summary>
 		public static string GUIEditor_AddButton {
 			get {
@@ -493,7 +583,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUIEditor.AddColorpicker.
+		///   Looks up a localized string similar to Add Colorpicker.
 		/// </summary>
 		public static string GUIEditor_AddColorpicker {
 			get {
@@ -502,7 +592,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUIEditor.AddDeviceAddress.
+		///   Looks up a localized string similar to Add Device Address.
 		/// </summary>
 		public static string GUIEditor_AddDeviceAddress {
 			get {
@@ -511,7 +601,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUIEditor.AddDeviceDipswitch.
+		///   Looks up a localized string similar to Add Dipswitch.
 		/// </summary>
 		public static string GUIEditor_AddDeviceDipswitch {
 			get {
@@ -520,7 +610,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUIEditor.AddDeviceImage.
+		///   Looks up a localized string similar to Add Device Image.
 		/// </summary>
 		public static string GUIEditor_AddDeviceImage {
 			get {
@@ -529,7 +619,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUIEditor.AddDeviceName.
+		///   Looks up a localized string similar to Add Device Name.
 		/// </summary>
 		public static string GUIEditor_AddDeviceName {
 			get {
@@ -538,7 +628,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUIEditor.AddDropdown.
+		///   Looks up a localized string similar to Add Dropdown.
 		/// </summary>
 		public static string GUIEditor_AddDropdown {
 			get {
@@ -547,7 +637,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUIEditor.AddFadetimeCheckbox.
+		///   Looks up a localized string similar to Add Fadetime checkbox.
 		/// </summary>
 		public static string GUIEditor_AddFadetimeCheckbox {
 			get {
@@ -556,7 +646,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUIEditor.AddFadetimeEdit.
+		///   Looks up a localized string similar to Add Fadetime edit.
 		/// </summary>
 		public static string GUIEditor_AddFadetimeEdit {
 			get {
@@ -565,7 +655,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUIEditor.AddLabel.
+		///   Looks up a localized string similar to Add Label.
 		/// </summary>
 		public static string GUIEditor_AddLabel {
 			get {
@@ -574,7 +664,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUIEditor.AddPosition.
+		///   Looks up a localized string similar to Add Position.
 		/// </summary>
 		public static string GUIEditor_AddPosition {
 			get {
@@ -583,7 +673,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUIEditor.AddPresetSelector.
+		///   Looks up a localized string similar to Add Preset selector.
 		/// </summary>
 		public static string GUIEditor_AddPresetSelector {
 			get {
@@ -592,7 +682,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUIEditor.AddSlider.
+		///   Looks up a localized string similar to Add Slider.
 		/// </summary>
 		public static string GUIEditor_AddSlider {
 			get {
@@ -601,7 +691,16 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUIPropertyEditor.PositionAndSize.
+		///   Looks up a localized string similar to Form.
+		/// </summary>
+		public static string GUIEditor_Form {
+			get {
+				return ResourceManager.GetString("GUIEditor.Form", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Position and Size.
 		/// </summary>
 		public static string GUIPropertyEditor_PositionAndSize {
 			get {
@@ -610,7 +709,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to GUIPropertyEditor.SpecialAction.
+		///   Looks up a localized string similar to Special action.
 		/// </summary>
 		public static string GUIPropertyEditor_SpecialAction {
 			get {
@@ -646,7 +745,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to InitValue.
+		///   Looks up a localized string similar to Init value.
 		/// </summary>
 		public static string InitValue {
 			get {
@@ -655,7 +754,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to InsertItem.
+		///   Looks up a localized string similar to Insert Item.
 		/// </summary>
 		public static string InsertItem {
 			get {
@@ -664,7 +763,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to InsertRange.
+		///   Looks up a localized string similar to Insert Range.
 		/// </summary>
 		public static string InsertRange {
 			get {
@@ -673,7 +772,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to InstallationNotFoundText.
+		///   Looks up a localized string similar to The installation directory of PC_DIMMER could not be found in the standard path. The selection of images will be limited..
 		/// </summary>
 		public static string InstallationNotFoundText {
 			get {
@@ -682,7 +781,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to InstallationNotFoundTitle.
+		///   Looks up a localized string similar to PC_DIMMER installation not found.
 		/// </summary>
 		public static string InstallationNotFoundTitle {
 			get {
@@ -700,7 +799,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to Iris.Closed.
+		///   Looks up a localized string similar to Closed.
 		/// </summary>
 		public static string Iris_Closed {
 			get {
@@ -709,7 +808,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to Iris.Open.
+		///   Looks up a localized string similar to Open.
 		/// </summary>
 		public static string Iris_Open {
 			get {
@@ -727,6 +826,15 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
+		///   Looks up a localized string similar to Label.
+		/// </summary>
+		public static string Label {
+			get {
+				return ResourceManager.GetString("Label", resourceCulture);
+			}
+		}
+		
+		/// <summary>
 		///   Looks up a localized string similar to Left.
 		/// </summary>
 		public static string Left {
@@ -736,25 +844,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to Libraries.
-		/// </summary>
-		public static string Libraries {
-			get {
-				return ResourceManager.GetString("Libraries", resourceCulture);
-			}
-		}
-		
-		/// <summary>
-		///   Looks up a localized string similar to License.
-		/// </summary>
-		public static string License {
-			get {
-				return ResourceManager.GetString("License", resourceCulture);
-			}
-		}
-		
-		/// <summary>
-		///   Looks up a localized string similar to LoadWarnings.
+		///   Looks up a localized string similar to While loading the file some warnings were generated..
 		/// </summary>
 		public static string LoadWarnings {
 			get {
@@ -817,6 +907,15 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
+		///   Looks up a localized string similar to not named.
+		/// </summary>
+		public static string not_named {
+			get {
+				return ResourceManager.GetString("not named", resourceCulture);
+			}
+		}
+		
+		/// <summary>
 		///   Looks up a localized string similar to Off.
 		/// </summary>
 		public static string Off {
@@ -844,7 +943,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to This feature is not a range and can only be applied to items..
+		///   Looks up a localized string similar to This feature is not a range feature and can only be applied to items..
 		/// </summary>
 		public static string PCDChannelSubset_FeatureRangeError {
 			get {
@@ -880,7 +979,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to PCDFadetimeCheckbox.UseFadetime.
+		///   Looks up a localized string similar to Use fadetime.
 		/// </summary>
 		public static string PCDFadetimeCheckbox_UseFadetime {
 			get {
@@ -889,7 +988,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to Featurerange of feature &apos;{0}&apos; collides with subset &apos;{1}&apos;..
+		///   Looks up a localized string similar to Range of feature &apos;{0}&apos; collides with subset &apos;{1}&apos;..
 		/// </summary>
 		public static string PCDFeatureParser_Collide {
 			get {
@@ -934,7 +1033,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to PCDPresetWriter.PresetItemNotAssociated.
+		///   Looks up a localized string similar to On preset &apos;{0}&apos; an item was not associated to a channel..
 		/// </summary>
 		public static string PCDPresetWriter_PresetItemNotAssociated {
 			get {
@@ -943,7 +1042,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to PngImage.
+		///   Looks up a localized string similar to Portable Network Graphic.
 		/// </summary>
 		public static string PngImage {
 			get {
@@ -961,7 +1060,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to PresetChannel.
+		///   Looks up a localized string similar to Preset channel.
 		/// </summary>
 		public static string PresetChannel {
 			get {
@@ -970,16 +1069,16 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to PresetEditor.Add Channel.
+		///   Looks up a localized string similar to Add Channel.
 		/// </summary>
-		public static string PresetEditor_Add_Channel {
+		public static string PresetEditor_AddChannel {
 			get {
-				return ResourceManager.GetString("PresetEditor.Add Channel", resourceCulture);
+				return ResourceManager.GetString("PresetEditor.AddChannel", resourceCulture);
 			}
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to PresetEditor.AddPreset.
+		///   Looks up a localized string similar to Add Preset.
 		/// </summary>
 		public static string PresetEditor_AddPreset {
 			get {
@@ -988,7 +1087,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to PresetEditor.ClonePreset.
+		///   Looks up a localized string similar to Clone Preset.
 		/// </summary>
 		public static string PresetEditor_ClonePreset {
 			get {
@@ -1024,7 +1123,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to PropertyEditor.Joinwithnextitem.
+		///   Looks up a localized string similar to Join with next item.
 		/// </summary>
 		public static string PropertyEditor_Joinwithnextitem {
 			get {
@@ -1038,6 +1137,15 @@ namespace Koinzer.pcdddfinwpf {
 		public static string Range {
 			get {
 				return ResourceManager.GetString("Range", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Range Left Max-Min.
+		/// </summary>
+		public static string Range_Left_Max_Min {
+			get {
+				return ResourceManager.GetString("Range Left Max-Min", resourceCulture);
 			}
 		}
 		
@@ -1069,6 +1177,15 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
+		///   Looks up a localized string similar to Range Right Max-Min.
+		/// </summary>
+		public static string Range_Right_Max_Min {
+			get {
+				return ResourceManager.GetString("Range Right Max-Min", resourceCulture);
+			}
+		}
+		
+		/// <summary>
 		///   Looks up a localized string similar to Range Right Min-Max.
 		/// </summary>
 		public static string Range_Right_Min_Max {
@@ -1096,7 +1213,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to SaveQuestionText.
+		///   Looks up a localized string similar to Do you want to save the file?.
 		/// </summary>
 		public static string SaveQuestionText {
 			get {
@@ -1105,7 +1222,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to SaveQuestionTitle.
+		///   Looks up a localized string similar to File modified.
 		/// </summary>
 		public static string SaveQuestionTitle {
 			get {
@@ -1114,7 +1231,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to SaveWarnings.
+		///   Looks up a localized string similar to While saving the file the following warnings were generated..
 		/// </summary>
 		public static string SaveWarnings {
 			get {
@@ -1123,7 +1240,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to SetValue.
+		///   Looks up a localized string similar to Set value.
 		/// </summary>
 		public static string SetValue {
 			get {
@@ -1141,7 +1258,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to Shutter.Closed.
+		///   Looks up a localized string similar to Closed.
 		/// </summary>
 		public static string Shutter_Closed {
 			get {
@@ -1150,7 +1267,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to Shutter.Open.
+		///   Looks up a localized string similar to Open.
 		/// </summary>
 		public static string Shutter_Open {
 			get {
@@ -1186,7 +1303,7 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
-		///   Looks up a localized string similar to TheElementSelectedNeedsToHaveSpaceForTheNewElement.
+		///   Looks up a localized string similar to The element selected needs to have space for the new element..
 		/// </summary>
 		public static string TheElementSelectedNeedsToHaveSpaceForTheNewElement {
 			get {

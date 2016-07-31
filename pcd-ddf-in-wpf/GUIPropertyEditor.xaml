@@ -52,8 +52,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 								<RowDefinition Height="Auto" />
 							</Grid.RowDefinitions>
 							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="0.5*" />
-								<ColumnDefinition Width="0.5*" />
+								<ColumnDefinition Width="0.4*" />
+								<ColumnDefinition Width="0.6*" />
 							</Grid.ColumnDefinitions>
 							<TextBlock Grid.Row="0" Grid.Column="0" Text="{self:Loc Left}" />
 							<ctrls:IntegerUpDown Grid.Row="0" Grid.Column="1" Minimum="0" Value="{Binding Left}" />
@@ -78,8 +78,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 									<RowDefinition Height="Auto" />
 								</Grid.RowDefinitions>
 								<Grid.ColumnDefinitions>
-									<ColumnDefinition Width="0.5*" />
-									<ColumnDefinition Width="0.5*" />
+									<ColumnDefinition Width="0.4*" />
+									<ColumnDefinition Width="0.6*" />
 								</Grid.ColumnDefinitions>
 								<TextBlock Grid.Row="0" Grid.Column="0" Text="{self:Loc Channel}" />
 								<ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Parent.Channels}" SelectedItem="{Binding AssociatedChannel}">
@@ -103,8 +103,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 									<RowDefinition Height="Auto" />
 								</Grid.RowDefinitions>
 								<Grid.ColumnDefinitions>
-									<ColumnDefinition Width="0.5*" />
-									<ColumnDefinition Width="0.5*" />
+									<ColumnDefinition Width="0.4*" />
+									<ColumnDefinition Width="0.6*" />
 								</Grid.ColumnDefinitions>
 								<TextBlock Grid.Row="0" Grid.Column="0" Text="{self:Loc GUIPropertyEditor.SpecialAction}" />
 								<ComboBox Grid.Row="0" Grid.Column="1" Name="specialAction" ItemsSource="{Binding Source={StaticResource specialButtonActions}}" SelectedItem="{Binding SpecialButtonAction}" />
@@ -153,14 +153,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 				</DataTemplate>
 				<DataTemplate DataType="{x:Type gui:PCDLabel}">
 					<StackPanel>
-						<GroupBox Header="{self:Loc Dropdown}">
+						<GroupBox Header="{self:Loc Label}">
 							<Grid>
 								<Grid.RowDefinitions>
 									<RowDefinition Height="Auto" />
 								</Grid.RowDefinitions>
 								<Grid.ColumnDefinitions>
-									<ColumnDefinition Width="0.5*" />
-									<ColumnDefinition Width="0.5*" />
+									<ColumnDefinition Width="0.4*" />
+									<ColumnDefinition Width="0.6*" />
 								</Grid.ColumnDefinitions>
 								<TextBlock Grid.Row="0" Grid.Column="0" Text="{self:Loc Caption}" />
 								<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Caption, UpdateSourceTrigger=PropertyChanged}" />
@@ -177,8 +177,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 									<RowDefinition Height="Auto" />
 								</Grid.RowDefinitions>
 								<Grid.ColumnDefinitions>
-									<ColumnDefinition Width="0.5*" />
-									<ColumnDefinition Width="0.5*" />
+									<ColumnDefinition Width="0.4*" />
+									<ColumnDefinition Width="0.6*" />
 								</Grid.ColumnDefinitions>
 								<CheckBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="{self:Loc Checked}" IsChecked="{Binding Checked}" />
 								<TextBlock Grid.Row="1" Grid.Column="0" Text="{self:Loc Caption}" />
@@ -195,8 +195,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 									<RowDefinition Height="Auto" />
 								</Grid.RowDefinitions>
 								<Grid.ColumnDefinitions>
-									<ColumnDefinition Width="0.5*" />
-									<ColumnDefinition Width="0.5*" />
+									<ColumnDefinition Width="0.4*" />
+									<ColumnDefinition Width="0.6*" />
 								</Grid.ColumnDefinitions>
 								<TextBlock Grid.Row="0" Grid.Column="0" Text="{self:Loc Caption}" />
 								<ctrls:IntegerUpDown Grid.Row="0" Grid.Column="1" Value="{Binding Value}" />

@@ -549,4 +549,7 @@
   <data name="Range Right Max-Min" xml:space="preserve">
     <value>Range Right Max-Min</value>
   </data>
+  <data name="Label" xml:space="preserve">
+    <value>Label</value>
+  </data>
 </root>

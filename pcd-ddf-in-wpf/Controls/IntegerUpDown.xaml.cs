@@ -43,6 +43,8 @@ namespace Koinzer.pcdddfinwpf.Controls
 		void TextBox_MouseWheel(object sender, MouseWheelEventArgs e)
 		{
 			int delta = (Keyboard.Modifiers.HasFlag(ModifierKeys.Shift)) ? 10 : 1;
+			if (textbox.IsFocused)
+				textbox.GetBindingExpression(TextBox.TextProperty).UpdateSource();
 			InternalValue += (e.Delta > 0) ? delta : -delta;
 		}
 		
@@ -105,10 +107,14 @@ namespace Koinzer.pcdddfinwpf.Controls
 		{
 			int delta = e.KeyboardDevice.Modifiers.HasFlag(ModifierKeys.Shift) ? 10 : 1;
 			if (e.Key == Key.Down) {
+				if (textbox.IsFocused)
+					textbox.GetBindingExpression(TextBox.TextProperty).UpdateSource();
 				InternalValue -= delta;
 				e.Handled = true;
 			}
 			if (e.Key == Key.Up) {
+				if (textbox.IsFocused)
+					textbox.GetBindingExpression(TextBox.TextProperty).UpdateSource();
 				InternalValue += delta;
 				e.Handled = true;
 			}

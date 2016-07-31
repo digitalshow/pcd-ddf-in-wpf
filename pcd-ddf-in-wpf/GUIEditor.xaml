@@ -93,7 +93,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="200" />
+				<ColumnDefinition Width="300" />
 			</Grid.ColumnDefinitions>
 			<ItemsControl Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" 
 				ItemsSource="{Binding GUIElements}" 
