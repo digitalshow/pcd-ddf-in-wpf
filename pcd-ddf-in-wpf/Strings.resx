@@ -390,6 +390,18 @@
   <data name="LoadWarnings" xml:space="preserve">
     <value>While loading the file some warnings were generated.</value>
   </data>
+  <data name="MatrixDevice" xml:space="preserve">
+    <value>Matrix device</value>
+  </data>
+  <data name="MatrixRows" xml:space="preserve">
+    <value>Matrix row count</value>
+  </data>
+  <data name="MatrixColumns" xml:space="preserve">
+    <value>Matrix column count</value>
+  </data>
+  <data name="MatrixOrderType" xml:space="preserve">
+    <value>Matrix order type</value>
+  </data>
   <data name="Max" xml:space="preserve">
     <value>Max</value>
   </data>
@@ -413,6 +425,18 @@
   </data>
   <data name="PCDFadetimeCheckbox.UseFadetime" xml:space="preserve">
     <value>Use fadetime</value>
+  </data>
+  <data name="PCDMatrixOrderType.LeftRightLeftTopBottom" xml:space="preserve">
+    <value>Left to right to left, top to bottom</value>
+  </data>
+  <data name="PCDMatrixOrderType.LeftRightTopBottom" xml:space="preserve">
+    <value>Left to right, top to bottom</value>
+  </data>
+  <data name="PCDMatrixOrderType.TopBottomLeftRight" xml:space="preserve">
+    <value>Top to bottom, left to right</value>
+  </data>
+  <data name="PCDMatrixOrderType.TopBottomTopLeftRight" xml:space="preserve">
+    <value>Top to bottom to top, left to right</value>
   </data>
   <data name="PngImage" xml:space="preserve">
     <value>Portable Network Graphic</value>

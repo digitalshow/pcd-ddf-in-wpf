@@ -47,6 +47,11 @@ namespace Koinzer.pcdddfinwpf.Model
 			FormWidth = 300;
 			FormHeight = 400;
 			
+			IsMatrixDevice = false;
+			MatrixColumns = 1;
+			MatrixRows = 1;
+			MatrixOrderType = PCDMatrixOrderType.LeftRightTopBottom;
+			
 			GUIElements.Add(new GUI.PCDDeviceImage(this) { Left = 10, Top = 10 });
 			GUIElements.Add(new GUI.PCDDeviceName(this) { Left = 80, Top = 8 });
 			GUIElements.Add(new GUI.PCDDeviceAddress(this) { Left = 80, Top = 24 });
@@ -127,5 +132,33 @@ namespace Koinzer.pcdddfinwpf.Model
 		public ObservableCollection<GUI.PCDDeviceElement> GUIElements { get; private set; }
 		
 		public ObservableCollection<PCDDevicePreset> Presets { get; private set; }
+		
+		bool isMatrixDevice;
+		
+		public bool IsMatrixDevice {
+			get { return isMatrixDevice; }
+			set { SetProperty(ref isMatrixDevice, value); }
+		}
+		
+		int matrixRows;
+		
+		public int MatrixRows {
+			get { return matrixRows; }
+			set { SetProperty(ref matrixRows, value); }
+		}
+		
+		int matrixColumns;
+		
+		public int MatrixColumns {
+			get { return matrixColumns; }
+			set { SetProperty(ref matrixColumns, value); }
+		}
+		
+		PCDMatrixOrderType matrixOrderType;
+		
+		public PCDMatrixOrderType MatrixOrderType {
+			get { return matrixOrderType; }
+			set { SetProperty(ref matrixOrderType, value); }
+		}
 	}
 }

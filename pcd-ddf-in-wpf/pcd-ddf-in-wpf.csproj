@@ -152,6 +152,7 @@
     <Compile Include="Model\PCDDeviceFeatures.cs" />
     <Compile Include="Model\PCDDevicePreset.cs" />
     <Compile Include="Model\PCDDevicePresetChannel.cs" />
+    <Compile Include="Model\PCDMatrixOrderType.cs" />
     <Compile Include="Model\PCDModelObject.cs" />
     <Compile Include="Parser\ParseResults.cs" />
     <Compile Include="Parser\PCDColorParser.cs" />

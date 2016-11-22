@@ -49,6 +49,7 @@ namespace Koinzer.pcdddfinwpf.Writer
 			StringBuilder functionFormRefresh = new StringBuilder();
 			functionFormRefresh.AppendLine("var");
 			functionFormRefresh.AppendLine("  value: Integer;");
+			functionFormRefresh.AppendLine("  temp, phi, r: Double;");
 			functionFormRefresh.AppendLine("begin");
 			functionFormRefresh.AppendLine("  if dontRefresh then begin");
 			functionFormRefresh.AppendLine("    dontRefresh := false;");

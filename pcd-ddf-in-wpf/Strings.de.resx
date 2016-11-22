@@ -360,6 +360,18 @@
   <data name="LoadWarnings" xml:space="preserve">
     <value>Beim Laden der Datei wurden folgende Warnungen generiert.</value>
   </data>
+  <data name="MatrixDevice" xml:space="preserve">
+    <value>Matrixgerät</value>
+  </data>
+  <data name="MatrixRows" xml:space="preserve">
+    <value>Matrix-Zeilenanzahl</value>
+  </data>
+  <data name="MatrixColumns" xml:space="preserve">
+    <value>Matrix-Spaltenanzahl</value>
+  </data>
+  <data name="MatrixOrderType" xml:space="preserve">
+    <value>Matrix-Richtung</value>
+  </data>
   <data name="Max" xml:space="preserve">
     <value>Max</value>
   </data>
@@ -410,6 +422,18 @@
   </data>
   <data name="PCDGUIWriter.InvalidPresetName" xml:space="preserve">
     <value>Das Preset '{0}' konnte einem Button nicht zugewiesen werden da der Presetname ungültig ist.</value>
+  </data>
+  <data name="PCDMatrixOrderType.LeftRightLeftTopBottom" xml:space="preserve">
+    <value>Links nach rechts nach links, oben nach unten</value>
+  </data>
+  <data name="PCDMatrixOrderType.LeftRightTopBottom" xml:space="preserve">
+    <value>Links nach rechts, oben nach unten</value>
+  </data>
+  <data name="PCDMatrixOrderType.TopBottomLeftRight" xml:space="preserve">
+    <value>Oben nach unten, links nach rechts</value>
+  </data>
+  <data name="PCDMatrixOrderType.TopBottomTopLeftRight" xml:space="preserve">
+    <value>Oben nach unten nach oben, links nach rechts</value>
   </data>
   <data name="PCDPresetWriter.PresetItemNotAssociated" xml:space="preserve">
     <value>Beim Preset '{0}' wurde ein Eintrag keinem Kanal zugeordnet.</value>

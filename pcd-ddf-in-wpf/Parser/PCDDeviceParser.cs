@@ -23,6 +23,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Media;
 using System.Xml;
+using Koinzer.pcdddfinwpf.Model;
 
 namespace Koinzer.pcdddfinwpf.Parser
 {
@@ -106,6 +107,27 @@ namespace Koinzer.pcdddfinwpf.Parser
 					chan.Subsets.Add(subset);
 				}
 				device.Channels.Add(chan);
+			}
+			
+			XmlNode matrix = GetNode(doc, "matrix");
+			device.IsMatrixDevice = (matrix != null);
+			if (device.IsMatrixDevice) {
+				device.MatrixRows = int.Parse(matrix.Attributes["ycount"].Value);
+				device.MatrixColumns = int.Parse(matrix.Attributes["xcount"].Value);
+				switch (matrix.Attributes["ordertype"].Value) {
+					case "1":
+						device.MatrixOrderType = PCDMatrixOrderType.LeftRightTopBottom;
+						break;
+					case "2":
+						device.MatrixOrderType = PCDMatrixOrderType.LeftRightLeftTopBottom;
+						break;
+					case "3":
+						device.MatrixOrderType = PCDMatrixOrderType.TopBottomLeftRight;
+						break;
+					case "4":
+						device.MatrixOrderType = PCDMatrixOrderType.TopBottomTopLeftRight;
+						break;
+				}
 			}
 		}
 	}

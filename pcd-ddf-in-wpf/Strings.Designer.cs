@@ -853,6 +853,42 @@ namespace Koinzer.pcdddfinwpf {
 		}
 		
 		/// <summary>
+		///   Looks up a localized string similar to Matrix column count.
+		/// </summary>
+		public static string MatrixColumns {
+			get {
+				return ResourceManager.GetString("MatrixColumns", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Matrix device.
+		/// </summary>
+		public static string MatrixDevice {
+			get {
+				return ResourceManager.GetString("MatrixDevice", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Matrix order type.
+		/// </summary>
+		public static string MatrixOrderType {
+			get {
+				return ResourceManager.GetString("MatrixOrderType", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Matrix row count.
+		/// </summary>
+		public static string MatrixRows {
+			get {
+				return ResourceManager.GetString("MatrixRows", resourceCulture);
+			}
+		}
+		
+		/// <summary>
 		///   Looks up a localized string similar to Max.
 		/// </summary>
 		public static string Max {
@@ -1029,6 +1065,42 @@ namespace Koinzer.pcdddfinwpf {
 		public static string PCDGUIWriter_InvalidPresetName {
 			get {
 				return ResourceManager.GetString("PCDGUIWriter.InvalidPresetName", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Left to right to left, top to bottom.
+		/// </summary>
+		public static string PCDMatrixOrderType_LeftRightLeftTopBottom {
+			get {
+				return ResourceManager.GetString("PCDMatrixOrderType.LeftRightLeftTopBottom", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Left to right, top to bottom.
+		/// </summary>
+		public static string PCDMatrixOrderType_LeftRightTopBottom {
+			get {
+				return ResourceManager.GetString("PCDMatrixOrderType.LeftRightTopBottom", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Top to bottom, left to right.
+		/// </summary>
+		public static string PCDMatrixOrderType_TopBottomLeftRight {
+			get {
+				return ResourceManager.GetString("PCDMatrixOrderType.TopBottomLeftRight", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to Top to bottom to top, left to right.
+		/// </summary>
+		public static string PCDMatrixOrderType_TopBottomTopLeftRight {
+			get {
+				return ResourceManager.GetString("PCDMatrixOrderType.TopBottomTopLeftRight", resourceCulture);
 			}
 		}
 		

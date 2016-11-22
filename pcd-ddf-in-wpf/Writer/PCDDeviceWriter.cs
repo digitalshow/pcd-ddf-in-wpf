@@ -89,6 +89,28 @@ namespace Koinzer.pcdddfinwpf.Writer
 			nodeDevice.Add(channels);
 			nodeDevice.Add(initvalues);
 			
+			if (device.IsMatrixDevice) {
+				int ordertype = 1;
+				switch (device.MatrixOrderType) {
+					case Model.PCDMatrixOrderType.LeftRightTopBottom:
+						ordertype = 1;
+						break;
+					case Model.PCDMatrixOrderType.LeftRightLeftTopBottom:
+						ordertype = 2;
+						break;
+					case Model.PCDMatrixOrderType.TopBottomLeftRight:
+						ordertype = 3;
+						break;
+					case Model.PCDMatrixOrderType.TopBottomTopLeftRight:
+						ordertype = 4;
+						break;
+				}
+				nodeDevice.Add(new XElement("matrix",
+				                            new XAttribute("xcount", device.MatrixColumns),
+				                            new XAttribute("ycount", device.MatrixRows),
+				                            new XAttribute("ordertype", ordertype)));
+			}
+			
 			new PCDColorsWriter().Write(nodeDevice, device, results);
 			new PCDGobosWriter().Write(nodeDevice, device, results);
 			new PCDFeatureWriter().Write(nodeDevice, device, results);
