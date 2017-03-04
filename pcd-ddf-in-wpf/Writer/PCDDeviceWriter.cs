@@ -111,6 +111,7 @@ namespace Koinzer.pcdddfinwpf.Writer
 				                            new XAttribute("ordertype", ordertype)));
 			}
 			
+			new PCDDeviceAmberWriter().Write(nodeDevice, device, results);
 			new PCDColorsWriter().Write(nodeDevice, device, results);
 			new PCDGobosWriter().Write(nodeDevice, device, results);
 			new PCDFeatureWriter().Write(nodeDevice, device, results);

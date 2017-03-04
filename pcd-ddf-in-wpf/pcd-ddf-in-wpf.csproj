@@ -207,6 +207,7 @@
     <Compile Include="Workspace.cs" />
     <Compile Include="Writer\PCDCodeWriter.cs" />
     <Compile Include="Writer\PCDColorsWriter.cs" />
+    <Compile Include="Writer\PCDDeviceAmberWriter.cs" />
     <Compile Include="Writer\PCDDeviceWriter.cs" />
     <Compile Include="Writer\PCDFeatureWriter.cs" />
     <Compile Include="Writer\PCDGobosWriter.cs" />

@@ -19,31 +19,29 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 using System;
-using System.Diagnostics;
-using System.Xml;
+using System.Xml.Linq;
 
-namespace Koinzer.pcdddfinwpf.Parser
+namespace Koinzer.pcdddfinwpf.Writer
 {
 	/// <summary>
 	/// Description of PCDDeviceAmberParser.
 	/// </summary>
-	public class PCDDeviceAmberParser: PCDParser
+	public class PCDDeviceAmberWriter
 	{
-		public PCDDeviceAmberParser()
+		public PCDDeviceAmberWriter()
 		{
 		}
 		
-		public override void Parse(XmlDocument doc, Model.PCDDevice device, ParseResults results)
+		public void Write(XElement nodeDevice, Model.PCDDevice device, WriteResults results)
 		{
 			Model.PCDDeviceAmber amber = device.Amber;
-			XmlNode node = GetNode(doc, "amber");
-			if (node == null)
-				return;
-			amber.UseAmberMixing = node.Attributes["UseAmberMixing"].Value == "yes";
-			amber.CompensateRG = node.Attributes["AmberMixingCompensateRG"].Value == "yes";
-			amber.CompensateBlue = node.Attributes["AmberMixingCompensateBlue"].Value == "yes";
-			amber.AmberColorR = int.Parse(node.Attributes["AmberColorR"].Value);
-			amber.AmberColorG = int.Parse(node.Attributes["AmberColorG"].Value);
+			nodeDevice.Add(
+				new XElement("amber", 
+				             new XAttribute("UseAmberMixing", amber.UseAmberMixing ? "yes" : "no"),
+				             new XAttribute("AmberMixingCompensateRG", amber.CompensateRG ? "yes" : "no"),
+				             new XAttribute("AmberMixingCompensateBlue", amber.CompensateBlue ? "yes" : "no"),
+				             new XAttribute("AmberColorR", amber.AmberColorR),
+				             new XAttribute("AmberColorG", amber.AmberColorG)));
 		}
 	}
 }
